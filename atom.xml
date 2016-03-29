@@ -4,9 +4,9 @@
   <subtitle>专业程序员伪装者</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://13hoop.github.io/"/>
   <updated>2016-03-29T09:58:42.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://13hoop.github.io/</id>
   
   <author>
     <name>13hoop</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2016/03/29/hello-world/"/>
-    <id>http://yoursite.com/2016/03/29/hello-world/</id>
+    <link href="http://13hoop.github.io/2016/03/29/hello-world/"/>
+    <id>http://13hoop.github.io/2016/03/29/hello-world/</id>
     <published>2016-03-29T09:58:42.000Z</published>
     <updated>2016-03-29T09:58:42.000Z</updated>
     
