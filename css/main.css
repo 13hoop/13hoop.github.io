@@ -45,6 +45,7 @@ blockquote {
   border-left: 4px #d3d3d3 solid;
   padding-left: 5px;
   margin-left: 20px;
+  border-radius: 5px;
 }
 a {
   text-decoration: none;
@@ -65,7 +66,7 @@ img {
   margin-top: 10px;
   margin-bottom: 10px;
   -webkit-box-shadow: 0 0 10px #555;
-  max-width: 100%;
+  max-width: 80%;
 }
 hr {
   color: LightGrey;
@@ -75,16 +76,18 @@ p {
 }
 pre,
 .highlight {
-  background: #002451;
+  background: #2d2d2d;
   margin: 20px 0;
   padding: 15px;
   overflow: auto;
   font-size: $code-font-size;
-  color: #fff;
+  color: #ccc;
   line-height: $line-height-code-block;
+  border-radius: 5px;
 }
 .highlight .gutter pre {
   color: #666;
+/*font-size: 0.85em // 行号大小*/
 }
 pre,
 code {
@@ -99,7 +102,9 @@ code {
 pre code {
   background: none;
   text-shadow: none;
+  color: #dcdcdc;
   padding: 0;
+  font-size: 14px;
 }
 .highlight pre {
   border: none;
@@ -110,6 +115,8 @@ pre code {
   margin: 0;
   width: auto;
   border: none;
+  font-size: 13px;
+  letter-spacing: 1px;
 }
 .highlight td {
   border: none;
@@ -117,7 +124,7 @@ pre code {
 }
 .highlight figcaption {
   font-size: 0.85em;
-  color: #7285b7;
+  color: #999;
   line-height: 1em;
   margin-bottom: 1em;
 }
@@ -132,7 +139,7 @@ pre code {
   height: 20px;
 }
 pre .comment {
-  color: #7285b7;
+  color: #999;
 }
 pre .variable,
 pre .attribute,
@@ -146,7 +153,7 @@ pre .html .doctype,
 pre .css .id,
 pre .css .class,
 pre .css .pseudo {
-  color: #ff9da4;
+  color: #f2777a;
 }
 pre .number,
 pre .preprocessor,
@@ -155,11 +162,11 @@ pre .literal,
 pre .params,
 pre .constant,
 pre .command {
-  color: #ffc58f;
+  color: #f99157;
 }
 pre .ruby .class .title,
 pre .css .rules .attribute {
-  color: #d1f1a9;
+  color: #9c9;
 }
 pre .string,
 pre .value,
@@ -170,11 +177,11 @@ pre .xml .cdata,
 pre .special,
 pre .number,
 pre .formula {
-  color: #d1f1a9;
+  color: #9c9;
 }
 pre .title,
 pre .css .hexcolor {
-  color: #9ff;
+  color: #6cc;
 }
 pre .function,
 pre .python .decorator,
@@ -184,9 +191,9 @@ pre .ruby .title .keyword,
 pre .perl .sub,
 pre .javascript .title,
 pre .coffeescript .title {
-  color: #bbdaff;
+  color: #69c;
 }
 pre .keyword,
 pre .javascript .function {
-  color: #ebbbff;
+  color: #c9c;
 }
