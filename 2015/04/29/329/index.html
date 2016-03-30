@@ -1,0 +1,84 @@
+<html>
+<head>
+	
+	<title>tips</title>
+	<meta name="keywords" content="My Blog, Spider Bitch!" />
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+    <!--<link rel="stylesheet" href="/css/main.css">-->
+	<link href="/css/main.css?v=2" rel="stylesheet" type="text/css" />
+    <!--<link rel="stylesheet" href="/css/style.css">-->
+    
+
+    <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Atom feed">
+
+    
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2"/>
+    
+
+</head>
+
+<body>
+
+<h2 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h2><h3 id="地图效果实现，demo验证"><a href="#地图效果实现，demo验证" class="headerlink" title="地图效果实现，demo验证"></a>地图效果实现，demo验证</h3><p> 使用scrollView，在缩放过程中，通过仿射参数（a或者d）和最大zoom值的比例，来确定percent，从而设置Interaction的进度，实现双手捏合等放地图交互。</p>
+<h3 id="项目框架搭建"><a href="#项目框架搭建" class="headerlink" title="项目框架搭建"></a>项目框架搭建</h3><p>准备阶段：</p>
+<ul>
+<li>主业务逻辑清楚（8成）</li>
+<li>数据组织形式（待定）</li>
+<li>数据流向</li>
+</ul>
+<blockquote>
+<p>请求部分： 从业务部分，通过统一接口发送请求</p>
+<p>响应部分： 从网络获取到原始数据（JSON），由Manager实例保管，Manager实现reformManagerData协议，直接得到最合适的view需要的具体化model，实现数据展示</p>
+</blockquote>
+<ul>
+<li>工具类组合：包含分类和独立协议 ＋ 常用单利</li>
+<li>第三方框架，交由pod统一管理</li>
+</ul>
+<h3 id="尽量避免的蛋疼的JSON解析，原数据："><a href="#尽量避免的蛋疼的JSON解析，原数据：" class="headerlink" title="尽量避免的蛋疼的JSON解析，原数据："></a>尽量避免的蛋疼的JSON解析，原数据：</h3><p><a href="http://host/index.php?c=recommend_ctrl&amp;m=get_tag_level_page_data" target="_blank" rel="external">http://host/index.php?c=recommend_ctrl&amp;m=get_tag_level_page_data</a><br><img src="/img/329_01.png" alt="关系树"></p>
+<p>首先是数据的层级关系，存储字段为tag_level，只存储层级关系</p>
+<ul>
+<li>其中root_tag的为第一层级所有的id</li>
+<li>余下以第一层id为key，存储下一层级的科目id</li>
+</ul>
+<p><img src="/img/329_02.png" alt="关系树"><br>具体的所有数据都在tag_meta中，共93组，每组由id为key，对应一个字典</p>
+<p>所以需要<br>第一，将tag_meta所有数据加载到内存，以便于根据id去获取，并且生命周期要保持至少2个层级控制器，所以需要一个从网络获取的原始数据字典<br>第二，对于每一个控制器itemList中，直接可用的是每层的title</p>
+<h3 id="UIButton"><a href="#UIButton" class="headerlink" title="UIButton"></a>UIButton</h3><ul>
+<li>在system下，设置background无效，而要更换为custom<br>另外系统并未提供setBackground：forState方法，所以自己添加一个分类实现之：</li>
+</ul>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">"UIButton+UIButtonColor.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">UIButton</span> (<span class="title">FillColor</span>)</span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)setBackgroundColor:(<span class="built_in">UIColor</span> *)backgroundColor forState:(<span class="built_in">UIControlState</span>)state &#123;</span><br><span class="line">    [<span class="keyword">self</span> setBackgroundImage:[<span class="built_in">UIButton</span> imageWithColor:backgroundColor] forState:state];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+ (<span class="built_in">UIImage</span> *)imageWithColor:(<span class="built_in">UIColor</span> *)color &#123;</span><br><span class="line">    <span class="built_in">CGRect</span> rect = <span class="built_in">CGRectMake</span>(<span class="number">0.0</span>f, <span class="number">0.0</span>f, <span class="number">1.0</span>f, <span class="number">1.0</span>f);</span><br><span class="line">    <span class="built_in">UIGraphicsBeginImageContext</span>(rect.size);</span><br><span class="line">    <span class="built_in">CGContextRef</span> context = <span class="built_in">UIGraphicsGetCurrentContext</span>();</span><br><span class="line"></span><br><span class="line">    <span class="built_in">CGContextSetFillColorWithColor</span>(context, [color <span class="built_in">CGColor</span>]);</span><br><span class="line">    <span class="built_in">CGContextFillRect</span>(context, rect);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">UIImage</span> *image = <span class="built_in">UIGraphicsGetImageFromCurrentImageContext</span>();</span><br><span class="line">    <span class="built_in">UIGraphicsEndImageContext</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> image;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>UIButton的边框和倒角,对<code>layer</code>操作是最方便的</li>
+</ul>
+
+
+<!--<a href="http://13hoop.github.io/2015/04/29/329/#disqus_thread" class="article-comment-link">Comments</a>-->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = '13hoopgithub'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+<div style="display:none">
+<script src="http://s4.cnzz.com/stat.php?id=undefined&web_id=undefined" language="JavaScript"></script>script>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
