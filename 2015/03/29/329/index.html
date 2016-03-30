@@ -28,10 +28,13 @@
 <ul>
 <li>主业务逻辑清楚（8成）</li>
 <li>数据组织形式（待定）</li>
-<li>数据流向<blockquote>
-<p> 请求部分： 从业务部分，通过统一接口发送请求<br> 响应部分： 从网络获取到原始数据（JSON），由Manager实例保管，Manager实现reformManagerData协议，直接得到最合适的view需要的具体化model，实现数据展示</p>
+<li>数据流向</li>
+</ul>
+<blockquote>
+<p>请求部分： 从业务部分，通过统一接口发送请求</p>
+<p>响应部分： 从网络获取到原始数据（JSON），由Manager实例保管，Manager实现reformManagerData协议，直接得到最合适的view需要的具体化model，实现数据展示</p>
 </blockquote>
-</li>
+<ul>
 <li>工具类组合：包含分类和独立协议 ＋ 常用单利</li>
 <li>第三方框架，交由pod统一管理</li>
 </ul>
