@@ -23,6 +23,54 @@
 
 <body>
 
+<p>上一篇中，已经体验了CoreData的基本使用，可以通过Xcode设计数据模型，可以对数据查询，增加，更改，但还不知道它的真正工作机制，而这将是这一篇的主要内容</p>
+<p>Core Data Stack，the stack is made up of four Core Data Classes:</p>
+<ul>
+<li>NSManagedObjectModel - 托管对象模型</li>
+<li>NSPersistentStore － 持久化存储</li>
+<li>NSPersistentStoreCoordinator － 持久化存储协调器</li>
+<li>NSManagedObjectContext － 托管对象上下文<br>我们已经和上下文NSManagedObjectContext打过交道了，可想而知其他3个是相对底层的依赖在支援者上下文，所以还是老规矩借助一个Demo开始吧。</li>
+</ul>
+<p><strong>what we do later</strong></p>
+<p>Rather than rely on the default starter template, you’ll build your own Core Data stack: a customizable “wrapper” around these classes that works as a unit.</p>
+<p>一个名叫”dog-walk”的小Demo，它可以保存你遛狗的时间日期并展示到tableView。不同的是，我们不再依赖Xcode的自动模版。</p>
+<hr>
+<p>不过再次之前，先要隆重寄出这4个<strong>关键类</strong></p>
+<ul>
+<li><strong>the mamaged object model</strong></li>
+</ul>
+<p>NSManagedObjectModel represents each object type in your app’s data model, the properties they can have, and the relationship between them. Other parts of the Core Data stack use the model to create objects, store properties and save data.<br>NSManagedObjectModel表征应用的数据模型中每个对象的类型，以及对象包含的属性和各对象的关联关系，CoreData的其他部分使用model创建对象，保存属性和数据。</p>
+<ul>
+<li><strong>the persistent store</strong><br>NSPersistentStore reads and writes data to whichever storage method you’ve decided to use. Core Data provides four types of NSPersistentStore out of the box: three atomic and one non-atomic.</li>
+</ul>
+<p>NSPersistentStore读写数据的方式，coreData提供了四种方式：</p>
+<p>  <code>NSQLiteStoreType</code>(default + nonatomic,backed by SQLite)<br>  <code>NSXMLStoreType</code>(readable + atomic, blacked by XML File, but have a large memory footprint, so available on OS X)<br>  <code>NSBinaryStoreType</code>(just like XML, large memory cost + atomic,blacked by a binary data file)<br>  <code>NSInMemoryStoreType</code>(in-memory not really persistent, terminate disappears)</p>
+<ul>
+<li><strong>the persistent store coordinator</strong><br>NSPersistentStoreCoordinator is the bridge between the managed object model and the persistent store. It is responsible for using the model and the persistent stores to do most of the hard work in Core Data. It understands the NSManagedObjectModel and knows how to send information to, and fetch information from, the NSPersistentStore.<br>NSPersistentStoreCoordinator also hides the implementation details of how your persistent store or stores are configured. This is useful for two reasons:<ol>
+<li>NSManagedObjectContext (coming next!) doesn’t have to know if it’s saving to an SQLite database, XML file or even iCloud.</li>
+<li>If you have multiple persistent stores, the persistent store coordinator presents a unified interface to the managed context. As far as the managed context is concerned, it always interacts with a single, aggregate persistent store.</li>
+</ol>
+</li>
+</ul>
+<p><code>NSPersistentStoreCoordinator</code>负责桥接托管对象模型和持久化储存，负责model的使用和固化存储等艰难的工作，推断出“向NSPersistentStore发送信息”或者“从NSPersistentStore获取信息”等行为。NSPersistentStoreCoordinator还隐藏了怎样持久化存储的配置的具体实施细则。这样一来：</p>
+<pre><code>1. 上下文不需要关心数据固化的类型，不论是SQLite，XML或者其他类型；
+2. 如果是多种类型混合使用，协调器就为上下文提供一个便于管理的统一接口。
+</code></pre><ul>
+<li><strong>the managed object context</strong></li>
+</ul>
+<p><code>NSManagedObjectContext</code> is an in-memory ‘scratchpad’, do all works within it, and any changes won’t affect the underlying data on disk until you call save() on the context.<br>上下文是一个内存中的暂存器，所有的工作都要用到它，任何变动在save()到上下文之前是不会影响到硬盘上的数据的。它是如此的重要请务必注意所以下特性：</p>
+<pre><code>1. The context manages the lifecycle of the objects that it creates or fetches. This lifecycle management includes powerful features such as faulting, inverse relationship handling and validation.
+上下文管理着对象创建和获取的整个生命周期 －包含一些强大的特性如错误，逆向关系以及验证。
+2. A managed object cannot exist without an associated context. In fact, a managed object and its context are so tightly coupled that every managed object keeps a reference to its context, which can be accessed like so:
+</code></pre><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> employeeContext = employee.managedObjectContext</span><br></pre></td></tr></table></figure>
+<pre><code>托管对象不能独立于其上下文而单独存在，他们是如此紧密的耦合，以致于我们约定以这样的命名和代码来获取它。
+3. Contexts are very territorial; once a managed object has associated with a particular context, it will remain associated with the same context for the duration of its lifecycle.
+上下文是非常自卫的（领土的，真不好翻译😓），一旦托管对象指定了一个上下文，那么在这个对象的整个生命周期都将和先前指定的上下文捆绑关联。
+4. An application can use more than one context—most non-trivial Core Data applications fall into this category. Since a context is an in-memory scratch pad for what’s on disk, you can actually load the same Core Data object onto two different contexts simultaneously.
+一个应用程序可以拥有不止一个上下文，许多优秀的应用都使用这一特性。因为它仅仅只是磁盘上内容在内存中的一个暂存，所以你大可以同时通过不同的上下文加载同一份CoreData对象。
+5. A context is not thread safe. The same goes for a managed object—you can only interact with contexts and managed objects on the same thread in which they were created. Apple has provided many ways to work with contexts in multithreaded applications. You’ll read all about different concurrency models in Chapter 10, “Multiple Managed Object Contexts.”
+上下文不是线程安全的，同样托管对象也不是，所以你正能在创建它们的同一线程中与他们交互。Apple也提供了很多种上下文在不同线程工作的机制，后面会介绍到。
+</code></pre><p><strong>总之NSManagedObjectContext是一个强大，牛气，专业，忠诚而又脆弱的一片内存暂存。</strong></p>
 
 
 <!--<a href="http://13hoop.github.io/2015/03/13/CoreData-二/#disqus_thread" class="article-comment-link">Comments</a>-->
