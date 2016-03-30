@@ -86,7 +86,7 @@ pre,
   border-radius: 5px;
 }
 .highlight .gutter pre {
-  color: #666;
+  color: none;
 /*font-size: 0.85em // 行号大小*/
 }
 pre,
@@ -127,8 +127,7 @@ pre code {
   color: #999;
   line-height: 1em;
   margin-bottom: 1em;
-}
-.highlight figcaption a {
+a
   float: right;
 }
 .highlight .gutter pre {
