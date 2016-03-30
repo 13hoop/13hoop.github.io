@@ -1,0 +1,152 @@
+<html>
+<head>
+	
+	<title>CoreData(一)</title>
+	<meta name="keywords" content="My Blog, Spider Bitch!" />
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+    <!--<link rel="stylesheet" href="/css/main.css">-->
+	<link href="/css/main.css?v=2" rel="stylesheet" type="text/css" />
+    <!--<link rel="stylesheet" href="/css/style.css">-->
+    
+
+    <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Atom feed">
+
+    
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2"/>
+    
+
+</head>
+
+<body>
+
+<h6 id="CoreData-and-Swift"><a href="#CoreData-and-Swift" class="headerlink" title="CoreData and Swift"></a>CoreData and Swift</h6><p>这是这本书Core Data by Tutorials的读书笔记，大大的封面<br><img src="/img/CoreData1_001_Top.png" alt="大大的封面"></p>
+<h2 id="section-one"><a href="#section-one" class="headerlink" title="section one"></a>section one</h2><p>First,why we need coreData？It matters data persistence.</p>
+<p>是啊，市场上有<code>SQL</code>和<code>Realm</code>这些简单易用的东西，谁还需要<code>coreData</code><br>但是<code>coreData</code>比你想象的强大得多，最大的优势在于是苹果的亲儿子，全平台通用；而那些动则用其效率和操作的，我就补充一段<code>Marcus Zarra</code>大神的回答：</p>
+<blockquote>
+<p>First, my opinion on third-party code is well known: all code sucks. I think Realm is trying to solve a problem that is the incorrect problem to solve. They’re trying to be faster than Core Data, whereas Core Data is trying to be fast enough, but maintainable. In my playing and working with Realm, I find that the amount of code you write is about equal. … As a project leader or a developer, I want maintainability and consistency. My big concern with third-party frameworks is that they go away. It happens over and over again. We don’t know how long Realm’s going to be here. I don’t understand their business model. Core Data for me is good enough; it’s mature, it’s been around long enough, and it’s fast enough. If it’s not fast enough, I’m probably doing something wrong because I’m in object space anyway. There’s a lot of unknowns about Realm.</p>
+</blockquote>
+<p>CoreData的意义在于数据的更灵活更高效的存储和处理，能够将数据固化时最起码的需求。干巴巴的学习没有任何意思，我们就从这个基本的需求入手，一个联系人的Demo，利用coreData实现信息从内存到本地的固化，并从本地读取。引述书中的要求：</p>
+<p>When you tap the Home button, the app that’s currently in the foreground goes to the background. When this happens, the operating system flash-freezes everything currently in memory, including the strings in the names array. Similarly, when it’s time to wake up and return to the foreground, the operating system restores what used to be in memory as if you’d never left.</p>
+<p>what we really want?<br>     to persist the names you enter so they’re available for viewing after a fresh app launch.</p>
+<h4 id="－-The-first-step-is-to-create-a-managed-object-model"><a href="#－-The-first-step-is-to-create-a-managed-object-model" class="headerlink" title="－ The first step is to create a managed object model"></a>－ The first step is to create a managed object model</h4><p>Since you elected to use Core Data when you created the HitList project, Xcode automatically created a data model file for you and named it HitList.xcdatamodeld.</p>
+<ul>
+<li><p>An entity is a class definition in Core Data. The classic example is an Employee or a Company. In a relational database, an entity corresponds to a table.</p>
+</li>
+<li><p>An attribute is a piece of information attached to a particular entity. For example, an Employee entity could have attributes for the employee’s name, position and salary. In a database, an attribute corresponds to a particular field in a table.</p>
+</li>
+<li><p>A relationship is a link between multiple entities. In Core Data, relationships between two entities are called to-one relationships, while those between one and many entities are called to-many relationships. For example, a Manager can have a to-many relationship with a set of employees, whereas an individual Employee will have a to-one relationship with his manager.</p>
+</li>
+</ul>
+<p>As you’ve probably noticed, entities sound a lot like a classes. Likewise, attributes/relationships sound a lot like properties. What’s the difference? You can think of a Core Data entity as a class “definition” and the managed object as an instance of that class.</p>
+<p>首先，需要创建托管对象模型NSManagedObjectModel，就是指定义在.mom中的所有实体，操作中将我们的数据模型添加到它之中</p>
+<p>基本的概念：<br><em>entity实体</em>     ： 理解为数据库中的表，也就是一种类，如一个Class Employee或者Class Company<br><em>attribute属性</em> ： 理解为数据库表中的字段，也就是特定实体的具体信息，如一个Employee实体包含name，position，salary等属性<br><em>relationship关系</em>： 就是不同实体的关系，在coreData中，两个实体间叫有一对一关系，如果一个实体和多个实体之间，就称之为多对一关系。比如一个manager和employee之间就是对多关系，而一个employee 和manager就是对一的关系。</p>
+<h4 id="－-Next-replace-the-table-view’s-model"><a href="#－-Next-replace-the-table-view’s-model" class="headerlink" title="－ Next, replace the table view’s model"></a>－ Next, replace the table view’s model</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// var names = [String]()</span></span><br><span class="line"><span class="comment">// Change “names” to “people” and [String] to [NSManagedObject]</span></span><br><span class="line"><span class="comment">// 使用强大的NSManagedObject实例，来替代简单的string</span></span><br><span class="line"><span class="keyword">var</span> people = [<span class="type">NSManagedObject</span>]()</span><br></pre></td></tr></table></figure>
+<p><strong>NSManagedObject</strong> represents a single object stored in Core Data—you must use it to create, edit, save and delete from your Core Data persistent store. As you’ll see shortly, NSManagedObject is a shape-shifter. It can take the form of any entity in your data model, appropriating whatever attributes and relationships you defined.</p>
+<ol>
+<li>Before you can save or retrieve anything from your Core Data store, you first need to get your hands on an NSManagedObjectContext. You can think of a managed object context as an in-memory “scratchpad” for working with managed objects.</li>
+<li>You create a new managed object and insert it into the managed object context. You can do this in one step with NSManagedObject’s designated initializer: init(entity:insertIntoManagedObjectContext:).</li>
+<li>With an NSManagedObject in hand, you set the name attribute using key-value coding. You have to spell the KVC key (“name” in this case) exactly as it appears on your data model, otherwise your app will crash at runtime.</li>
+<li>You commit your changes to person and save to disk by calling save on the managed object context. Note that save takes one parameter, which is a pointer to an NSError; if there is ever an error with the save operation, you can inspect the error and alert the user if necessary.</li>
+<li>Congratulations! Your new managed object is now safely ensconced in your Core Data persistent store. Insert the new managed object into the people array so that it shows up in the table view when it reloads.</li>
+</ol>
+<p>其次，使用托管对象 <em>［NSManagedObject］</em> 集合来替换tableView数据模型（这里的names）<br>托管对象NSManagedObject，就是我们拿来操作数据的基本单位。对应下来：</p>
+<ul>
+<li>增加一条数据是在NSManagedObjectContext新建一个NSManagedObject。</li>
+<li>查找数据是查找NSManagedObject。</li>
+<li>修改是修改NSManagedObject类的属性。</li>
+<li>删除是从NSManagedObjectContext里面删除NSManagedObject类。</li>
+</ul>
+<p>最后我们保存NSManagedObjectContext，然后一直向上传递到磁盘上面去，才是持久化的修改。总之，模型对象的数据被持有在NSManagedObject对象中。每一个NSManagedObject对象都对应一个实体（就像每一个对象都有一个类）。</p>
+<p>而对于NSManagedObject的操作又引出一个叫NSManagedObjectContext的东东，这是是我们经常使用到的一个类。对于为什么要有这个类，因为数据库的IO操作是很费时的，因此把一系列的操作缓存到了一个内存区域，等待合适的实际在去写入真实的磁盘中。这样大大的提高效率。比如插入一条数据，然后修改数据，最后删除掉这条数据，如果是每次都执行commit的话是操作三次IO，如果我们把这三条合并在一起commit的话就只有一次commit。这样能有效的提高整个系统的效率。NSManagedObjectContext就是为提供IO效率而在内存中的“暂存”。同时提前指出使用Core Data需要注意的是：NSManagedObjectContext并不是线程安全的，更多相关讨论先往后放。</p>
+<h4 id="－-Fetching-from-CoreData"><a href="#－-Fetching-from-CoreData" class="headerlink" title="－ Fetching from CoreData"></a>－ Fetching from CoreData</h4><p>LoadData from coreData</p>
+<ol>
+<li>before you can do anything with Core Data, you need a managed object context. Fetching is no different!</li>
+<li>Setting a fetch request’s entity property, or alternatively initializing it with init(entityName:), fetches all objects of a particular entity. This is what you do here to fetch all Person entities.<br>NSFetchRequest is the class responsible for fetching from Core Data.<br>Fetch requests have several qualifiers that refine the set of results they return.</li>
+<li>You hand the fetch request over to the managed object context to do the heavy lifting. executeFetchRequest(_:error:) returns an optional array of managed objects that meets the criteria specified by the fetch request.</li>
+</ol>
+<p>获取已保存的数据：</p>
+<ul>
+<li>先要得到上下文</li>
+<li>设置fetchRequest</li>
+<li>根据请求从上下文获取数据并做数据处理<br><img src="/img/CoreData1_002.png" alt=""></li>
+</ul>
+<h2 id="section-two"><a href="#section-two" class="headerlink" title="section two"></a>section two</h2><p>就创建一个小小的BowTie管理的demo，就是管理你的不同颜色的领结，UI和功能如下：<br>     segumentController － 可选颜色<br>     name  － 名称<br>     rante － 评分，从0-5<br>     times － 佩戴次数<br>     lastWorn － 上次佩戴的日期<br>     Favorite － 是否最爱<br>     wear － 增加佩戴次数和更新佩戴日期<br>     rate － 评分允许你重新评分</p>
+<p>OK，What you have to do now is take this sample data, store it in Core Data and use it to implement the bow tie management functionality.</p>
+<h4 id="Firstly-create-your-data-model"><a href="#Firstly-create-your-data-model" class="headerlink" title="Firstly ,create your data model"></a>Firstly ,create your data model</h4><p>在Bow<em>Ties.xcdatamodeld中操作，添加Bowtie实体，同时配置属性，为属性选取对应的数据类型，便利的可视化操作问什么不呢……^</em>^</p>
+<p><img src="/img/CoreData1_003.png" alt=""><br>Core Data also provides the option of storing arbitrary blobs of binary data directly in your data model. These could be anything from images to PDF files, or anything else that can be serialized into zeroes and ones.</p>
+<p>如果注意到每个领结都是有对应image 的，事实上coreData也支持定义二进制数据，所以可以添加一个photoData属性，类型选为BinaryData，但是这样便利的结果就是会带来急剧的消耗，根据SQLite中的使用，即便只想要一个name，内存中也会全部加载database中的内容，这样的消耗是不可接受的。</p>
+<p>Luckily, Core Data anticipates this problem.我们只需要对photoData属性进行配置Allows External Storage，如图：<br><img src="/img/CoreData1_004.png" alt=""></p>
+<blockquote>
+<p>The Allows External Storage option is only available for the binary data attribute type.</p>
+</blockquote>
+<p>When you enable Allows External Storage, Core Data heuristically decides on a per-value basis if it should save the data directly in the database or store a URI that points to a separate file.当选取允许外部存储时，CoreData直接预判是否应该保存数据到database亦或是转而储存一个指向特定文件的URL。</p>
+<p>所以，目前说来 coreData 支持常见的所有基本的数据类型：In sum, besides strings, integers, doubles, Booleans and dates, Core Data can also save binary data, and it can do so efficiently and intelligently.</p>
+<p>但仅仅是这样还不够，因为更多时候我们需要能够存储自定义的类型，一般就是自定的对象，比如Demo中每个领结都有颜色，而基本类型中是没有UIColor的，Once again, Core Data has your back，在Attributes的Type中有个Transformable类型，CoreData允许所有遵循NSCoding协议的对象都可以存储。正如UIColor (UIColor conforms to NSSecureCoding, which inherits from NSCoding, so it can use the transformable type out of the box)，添加tintColor：<br><img src="/img/CoreData1_005.png" alt=""></p>
+<p>New, data model is now complete. The Bowtie entity has the eight attributes it needs to store all the information in SampleData.plist.</p>
+<h4 id="secondly-managed-object-subclasses"><a href="#secondly-managed-object-subclasses" class="headerlink" title="secondly, managed object subclasses"></a>secondly, managed object subclasses</h4><p>在section1中的demo中，托管对象使用的是KVC给Person实体的name属性赋值，like this：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用KVC向属性（attribute）赋值</span></span><br><span class="line">person.setValue(name, forKey: <span class="string">"name"</span>)</span><br></pre></td></tr></table></figure>
+<p>你可以使用KVC但并不意味着应该用它，因为KVC的缺点也很明显，就是它的一切都依赖于字符串，The biggest problem with key-value coding is the fact that you’re accessing of data using strings instead of strongly-typed classes. This is often jokingly referred to as writing stringly typed code.</p>
+<p>As you probably know from experience, “stringly typed” code is vulnerable to silly human errors such as mistyping and misspelling. Key-value coding also doesn’t take full advantage of Swift’s type-checking and Xcode’s auto-completion. :]</p>
+<p>最好的替代方式就是在数据模型中为每个实体创建NSManagedObject子类，这就意味会存在一个着包含所有对应属性的Bowtie类，使用Xcode来生成吧</p>
+<p>Make sure you still have Bow_Ties.xcdatamodeld open, and go to Editor\Create NSManagedObject Subclass…. Select the data model and then the Bowtie entity in the next two dialog boxes, then select Swift as the language option in the final box. If you’re asked, say No to creating an Objective-C bridging header. Click Create to save the file.</p>
+<p>Bowtie看起来就是这样：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> CoreData</span><br><span class="line"><span class="comment">/*</span><br><span class="line">Similar to @dynamic in Objective-C, the @NSManaged attribute informs</span><br><span class="line">the Swift compiler that the backing store and implementation of a property</span><br><span class="line">will be provided at runtime instead of at compile time.</span><br><span class="line"></span><br><span class="line">The normal pattern is for a property to be backed by an instance variable</span><br><span class="line">in memory. A property on a managed object is different: It’s backed by the</span><br><span class="line">managed object context, so the source of the data is not known at compile time.</span><br><span class="line">*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bowtie</span>: <span class="title">NSManagedObject</span> </span>&#123;</span><br><span class="line">    <span class="comment">// bool,double,int -&gt; NSNumber</span></span><br><span class="line">    <span class="meta">@NSManaged</span> <span class="keyword">var</span> isFavorite: <span class="type">NSNumber</span></span><br><span class="line">    <span class="meta">@NSManaged</span> <span class="keyword">var</span> lastWorn: <span class="type">NSDate</span></span><br><span class="line">    <span class="meta">@NSManaged</span> <span class="keyword">var</span> name: <span class="type">String</span></span><br><span class="line">    <span class="meta">@NSManaged</span> <span class="keyword">var</span> rating: <span class="type">NSNumber</span></span><br><span class="line">    <span class="meta">@NSManaged</span> <span class="keyword">var</span> searchKey: <span class="type">String</span></span><br><span class="line">    <span class="meta">@NSManaged</span> <span class="keyword">var</span> timesWorn: <span class="type">NSNumber</span></span><br><span class="line">    <span class="meta">@NSManaged</span> <span class="keyword">var</span> photoData: <span class="type">NSData</span> <span class="comment">// 二进制－&gt; NSData</span></span><br><span class="line">    <span class="meta">@NSManaged</span> <span class="keyword">var</span> tintColor: <span class="type">AnyObject</span> <span class="comment">// 可变类型－&gt; AnyObject</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如果不想使用NSNumber，更加紧准的类型映射需要在创建类时勾选Use scalar properties for primitive data types in the last dialog，虽然这里暂时不勾选<br><img src="/img/CoreData1_006.png" alt=""></p>
+<p>还有很重要的一点，你需要链接Bowtie到数据模型编辑器的Bowtie实体。（脑补StoryBoard 与 view的链接）<br><img src="/img/CoreData1_007.png" alt=""></p>
+<p>Next to Class, replace Bowtie with Bow_Ties.Bowtie. This is the fully specified class name for Bowtie.swift. This last step links the runtime Bowtie class to the Bowtie entity in the data model editor.</p>
+<p>Congratulations, you’ve just made your first managed object subclass in Swift! Compared with key-value coding, this is a much better way of working with Core Data entities. There are two main benefits:</p>
+<ol>
+<li><p>Managed object subclasses unleash the syntactic power of Swift properties. By accessing attributes using properties instead of key-value coding, you again befriend Xcode and the compiler.</p>
+</li>
+<li><p>You gain the ability to override existing methods or to add your own convenience methods. Note that there are some NSManagedObject methods you must never override. Check Apple’s documentation of NSManagedObject for a complete list.</p>
+</li>
+</ol>
+<h4 id="Third-propagating-a-managed-context"><a href="#Third-propagating-a-managed-context" class="headerlink" title="Third ,propagating a managed context"></a>Third ,propagating a managed context</h4><p>传递上下文到控制器，毕竟老是用appdelegat是比较烦的，so pass the managed context from class to class via a property.</p>
+<p>在控制器中，从plist中获取数据，and insert all the bow tie data you had in SampleData.plist into Core Data<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 从plist获取数据，然后插入到data</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">insertSampleData</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure></p>
+<p>想看看这两种特殊类型是怎么保存的，如下：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// image转变为NSData保存</span></span><br><span class="line"><span class="keyword">let</span> photoData = <span class="type">UIImagePNGRepresentation</span>(image)</span><br><span class="line"><span class="comment">// 颜色直接用UIColor保存 － 一个专门由RGB返回颜色的方法</span></span><br><span class="line">bowtie.tintColor = colorFromDict(tintColotDict)</span><br></pre></td></tr></table></figure></p>
+<p>这里涉及到一个类似SQL中WHERE语句的查找的类，NSPredicate，用法简单避免了你去学习火星的正则表达式，比如要在firstName中查找’Bob’：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="type">NSPredicate</span> predicateWithFormat:@<span class="string">"firstName = 'Bob'"</span>];</span><br></pre></td></tr></table></figure></p>
+<p>当然这里仅仅只是查询满足“ searchKey ! = nil”（拥有searchKey）的数量，没有用到筛选功能：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">// 获取data中已存在数据的数量</span></span><br><span class="line"><span class="keyword">let</span> fetchRequset = <span class="type">NSFetchRequest</span>(entityName: <span class="string">"Bowtie"</span>)</span><br><span class="line">fetchRequset.predicate = <span class="type">NSPredicate</span>(format: <span class="string">"searchKey ! = nil"</span>)</span><br><span class="line"><span class="keyword">let</span> <span class="built_in">count</span> = managedContest.countForFetchRequest(fetchRequset, error: <span class="literal">nil</span>)</span><br></pre></td></tr></table></figure></p>
+<p>ok，保存搞定了，Now you need to access the data from somewhere！</p>
+<p>所以开始获取初始数据吧！这一步我们要完成<br>This is where you fetch the Bowties from Core Data and populate the UI. 在ViewDidLoad中添加获取的代码：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 2 从coreData获取数据</span></span><br><span class="line"><span class="keyword">let</span> request = <span class="type">NSFetchRequest</span>(entityName: <span class="string">"Bowtie"</span>)</span><br><span class="line"><span class="keyword">let</span> firstTitle = segmentedControl.titleForSegmentAtIndex(<span class="number">0</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"要查找seg的title［0］： <span class="subst">\(firstTitle)</span>"</span>)</span><br><span class="line"><span class="comment">// 3 根据segment的tilte配置请求，然后执行查找相应数据</span></span><br><span class="line">request.predicate = <span class="type">NSPredicate</span>(format: <span class="string">"searchKey == %@"</span>,      firstTitle!)</span><br><span class="line"><span class="keyword">var</span> error: <span class="type">NSError</span>? = <span class="literal">nil</span></span><br><span class="line"><span class="keyword">var</span> results = managedContest.executeFetchRequest(request, error: &amp;error) <span class="keyword">as</span>! [<span class="type">Bowtie</span>]?</span><br><span class="line"><span class="comment">// 4 根据获取结果的［Bowtie］集合，展示UI   &amp;   错误处理</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> bowties = results &#123;</span><br><span class="line">     populate(bowties[<span class="number">0</span>])</span><br><span class="line">&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">     <span class="built_in">print</span>(<span class="string">"未能获取<span class="subst">\(error)</span>,<span class="subst">\(error!.userInfo)</span>"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>populate方法就是将按照searchKey获取到的数据放入［Bowtie］集合后，负责展示到UI上，就是把该显示的UI的数据装进去，大部分没有技术含量，只挑选以下几点，需要注意的是数据的格式需要转化，如NSNumber到Bool：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 图片 － 由二进制提供</span></span><br><span class="line">imageView.image = <span class="type">UIImage</span>(data: bowtie.photoData)</span><br><span class="line"><span class="comment">// 颜色依旧是颜色</span></span><br><span class="line">view.tintColor = bowtie.tintColor <span class="keyword">as</span>! <span class="type">UIColor</span></span><br><span class="line"><span class="comment">// NSNumber -&gt; bool</span></span><br><span class="line">favoriteLabel.hidden = !bowtie.isFavorite.boolValue</span><br></pre></td></tr></table></figure></p>
+<p>然后运行，看到这样：<br><img src="/img/CoreData1_008.png" alt=""><br>现在充分证明我们对CoreData数据的存，取，查都是成功的，下面来完善其他功能，为了能给当前显示的领结进行评分等操作，我们需要一个属性用以纪录当前领结，so：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 当前显示领结</span></span><br><span class="line"><span class="keyword">var</span> currentBowtie: <span class="type">Bowtie</span>!</span><br></pre></td></tr></table></figure></p>
+<p>然后就是实现和添加wear和rate功能了，完成之后发现一个问题，就是rate我们想规定中0-5，但是直接跑到了6，通常都是考虑在代码中输入时去提示限定，但有个更简单的办法，就是利用Xcode对rate做些限定处理：<br><img src="/img/CoreData1_009.png" alt=""></p>
+<p>需要额外说明的是，绝对不要轻易version 模型设置，特别是在你已经发布版本之后，因为更新时很可能会带来严重的问题，但Attribute validation is one of the few exceptions.更多相关讨论先往后放。<br>当再次输入不再范围的数据时，就会有错误提升：</p>
+<blockquote>
+<p>Optional(“R”)currentBowtie更新rate后，未能保存Optional(Error Domain=NSCocoaErrorDomain Code=1610<br>“The operation couldn’t be completed. (Cocoa error 1610.)”</p>
+</blockquote>
+<p>根据错误对应的处理也是必须的：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> error: <span class="type">NSError</span>?</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> !managedContest.save(&amp;error) &#123;</span><br><span class="line"><span class="comment">/*</span><br><span class="line">如果输入的评分过大或过小，评分无效</span><br><span class="line"></span><br><span class="line">*/</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"currentBowtie更新rate后，未能保存<span class="subst">\(error)</span>,<span class="subst">\(error!.userInfo)</span>"</span>)</span><br><span class="line">     <span class="keyword">if</span> error!.code == <span class="type">NSValidationDateTooLateError</span> || error!.code ==      <span class="type">NSValidationDateTooSoonError</span> &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">          rate(currentBowtie)</span><br><span class="line"></span><br><span class="line">     &#125;</span><br><span class="line">&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">     populate(currentBowtie)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样如果输入的评分不符合预期，过大或者过小评分无效就是了</p>
+<p>还剩下一点儿根据不同segumentTitle匹配不同数据的功能就不再赘述了，留一点儿练手的机会自己慢慢玩儿吧…</p>
+
+
+<!--<a href="http://13hoop.github.io/2015/03/12/CoreData-一/#disqus_thread" class="article-comment-link">Comments</a>-->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = '13hoopgithub'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+<div style="display:none">
+<script src="http://s4.cnzz.com/stat.php?id=undefined&web_id=undefined" language="JavaScript"></script>script>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
