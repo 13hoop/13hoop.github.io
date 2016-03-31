@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://13hoop.github.io/"/>
-  <updated>2016-03-29T09:58:42.000Z</updated>
+  <updated>2016-03-30T09:25:10.000Z</updated>
   <id>http://13hoop.github.io/</id>
   
   <author>
@@ -14,33 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://13hoop.github.io/2016/03/29/hello-world/"/>
-    <id>http://13hoop.github.io/2016/03/29/hello-world/</id>
-    <published>2016-03-29T09:58:42.000Z</published>
-    <updated>2016-03-29T09:58:42.000Z</updated>
-    
-    <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;quick-start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&amp;quot;My New Post&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>tips</title>
@@ -89,6 +62,40 @@
     
     
       <category term="tips, 开发" scheme="http://13hoop.github.io/tags/tips-%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AutoLayout 的时机</title>
+    <link href="http://13hoop.github.io/2015/04/14/hello-world/"/>
+    <id>http://13hoop.github.io/2015/04/14/hello-world/</id>
+    <published>2015-04-14T03:11:10.000Z</published>
+    <updated>2016-03-31T05:25:38.000Z</updated>
+    
+    <content type="html">&lt;h6 id=&quot;autolayout-by-yongsir&quot;&gt;&lt;a href=&quot;#AutoLayout-by-YongSir&amp;#x1F1E8;&amp;#x1F1F3;&amp;#x1F1E8;&amp;#x1F1F3;&quot; class=&quot;headerlink&quot; title=&quot;AutoLayout by YongSir&amp;#x1F1E8;&amp;#x1F1F3;&amp;#x1F1E8;&amp;#x1F1F3;&quot;&gt;&lt;/a&gt;AutoLayout by YongSir&amp;#x1F1E8;&amp;#x1F1F3;&amp;#x1F1E8;&amp;#x1F1F3;&lt;/h6&gt;&lt;ul&gt;
+&lt;li&gt;&amp;#x89C6;&amp;#x56FE;&amp;#x5E03;&amp;#x5C40;&amp;#x76F8;&amp;#x5173;&lt;figure class=&quot;highlight objectivec&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// Called just before the view controller&amp;apos;s view&amp;apos;s layoutSubviews method is invoked. Subclasses can implement as necessary. The default is a nop.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt;)viewWillLayoutSubviews;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// Called just after the view controller&amp;apos;s view&amp;apos;s layoutSubviews method is invoked. Subclasses can implement as necessary. The default is a nop.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt;)viewDidLayoutSubviews;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;#x8FD9;&amp;#x4E24;&amp;#x4E2A;&amp;#x5728;VC&amp;#x4E2D;&amp;#x65B9;&amp;#x6CD5;&amp;#xFF0C;&amp;#x6B63;&amp;#x5982;&amp;#x5B83;&amp;#x7684;&amp;#x6CE8;&amp;#x91CA;&amp;#x6240;&amp;#x8FF0;&amp;#xFF0C;&lt;strong&gt;&amp;#x4F1A;&amp;#x5728;VC&amp;#x7684;view&amp;#x7684;layoutSubviews&amp;#x88AB;&amp;#x8C03;&amp;#x7528;&amp;#x7684;&amp;#x4E4B;&amp;#x524D;&amp;#x548C;&amp;#x4E4B;&amp;#x540E;&amp;#x88AB;&amp;#x8C03;&amp;#x7528;&amp;#xFF0C;&amp;#x8FD9;&amp;#x4E5F;&amp;#x5C31;&amp;#x662F;&amp;#x4E3A;&amp;#x4EC0;&amp;#x4E48;&amp;#xFF0C;&amp;#x5BF9;&amp;#x4E00;&amp;#x4E9B;&amp;#x6DFB;&amp;#x52A0;&amp;#x5230;view&amp;#x7684;&amp;#x5B50;&amp;#x89C6;&amp;#x56FE;&amp;#x5E03;&amp;#x5C40;&amp;#x4E4B;&amp;#x540E;&amp;#xFF0C;&amp;#x76F4;&amp;#x5230; viewDidLayoutSubviews&amp;#x624D;&amp;#x80FD;&amp;#x5F97;&amp;#x5230;&amp;#x6B63;&amp;#x786E;&amp;#x7684;&amp;#x503C;&amp;#xFF01;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PS&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;- (void)viewDidLoad&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (void)awakeFromNib&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (void)viewWillAppear:(BOOL)animated&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;#x53EF;&amp;#x4EE5;&amp;#x770B;&amp;#x5230;viewDidLoad&amp;#x662F;&amp;#x6700;&amp;#x5148;&amp;#x7684;&amp;#xFF0C;&amp;#x5B83;&amp;#x8D1F;&amp;#x8D23;&amp;#x52A0;&amp;#x8F7D;&amp;#x63A7;&amp;#x5236;&amp;#x5668;&amp;#xFF0C;&amp;#x5728;&amp;#x5B83;&amp;#x52A0;&amp;#x8F7D;&amp;#x7684;&amp;#x8FC7;&amp;#x7A0B;&amp;#x4E2D;&amp;#x53BB;&amp;#x67E5;&amp;#x770B;view&amp;#xFF0C;&amp;#x5982;&amp;#x679C;&amp;#x4ECE;sb&amp;#x52A0;&amp;#x8F7D;&amp;#x5C31;&amp;#x53BB;&amp;#x5230;awakeFromNib&amp;#x65B9;&amp;#x6CD5;&amp;#xFF0C;&amp;#x7136;&amp;#x540E;&amp;#x518D;&amp;#x663E;&amp;#x793A;&amp;#x4E4B;&amp;#x7C7B;&amp;#x7684;&amp;#xFF0C;&amp;#x77E5;&amp;#x9053;&amp;#x8FD9;&amp;#x4E9B;&amp;#x8FD8;&amp;#x4E0D;&amp;#x591F;&amp;#xFF0C;&amp;#x8FD8;&amp;#x9700;&amp;#x8981;&amp;#x77E5;&amp;#x9053;&amp;#xFF1A;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;111 viewDidload  -- self: &amp;lt;ZXMessgeCentreViewController: 0x1559a7280&amp;gt;, self.view: &amp;lt;UIView: 0x155f12cf0; frame = (0 0; 375 667); autoresize = W+H; layer = &amp;lt;CALayer: 0x155be07a0&amp;gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;222 awake  -- self: &amp;lt;ZXMessgeCentreViewController: 0x1559a7280&amp;gt;, self.view: &amp;lt;UIView: 0x155f12cf0; frame = (0 0; 375 667); autoresize = W+H; layer = &amp;lt;CALayer: 0x155be07a0&amp;gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;333 viewWillAppear -- self: &amp;lt;ZXMessgeCentreViewController: 0x1559a7280&amp;gt;, self.view: &amp;lt;UIView: 0x155f12cf0; frame = (0 0; 375 667); autoresize = W+H; layer = &amp;lt;CALayer: 0x155be07a0&amp;gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&amp;#x4EB2;&amp;#x6D4B;Xcode7 beat &amp;#x4E0B;&amp;#x4ECE;SB&amp;#x6765;&amp;#x7684;view&amp;#x5DF2;&amp;#x7ECF;&amp;#x5E03;&amp;#x5C40;&amp;#xFF0C;&amp;#x548C;viewDidLayoutSubviews&amp;#x4E2D;&amp;#x5BF9;&amp;#x6BD4;&amp;#xFF0C;&amp;#x8FD9;&amp;#x4E2A;&amp;#x65B9;&amp;#x6CD5;&amp;#x8FDB;&amp;#x4E86;2&amp;#x6B21;&amp;#xFF0C;&amp;#x90FD;&amp;#x662F;&amp;#xFF1A;&lt;br&gt;&lt;code&gt;viewDidLayoutSubviews&lt;/code&gt; &amp;#x4E2D;&amp;#x7684;&lt;code&gt;view: &amp;lt;UIView: 0x12697d2d0; frame = (0 0; 375 667); autoresize = W+H; layer = &amp;lt;CALayer: 0x126bd2450&amp;gt;&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PPS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;&amp;#x5F53;&amp;#x7136;&amp;#x5728;&amp;#x5B9E;&amp;#x9645;&amp;#x4F7F;&amp;#x7528;&amp;#x65F6;&amp;#xFF0C;&amp;#x6700;&amp;#x597D;&amp;#x80FD;&amp;#x8DDF;&amp;#x8E2A;&amp;#x4E00;&amp;#x4E0B;&amp;#x8FD9;&amp;#x51E0;&amp;#x4E2A;&amp;#x65B9;&amp;#x6CD5;&amp;#xFF0C;&amp;#x786E;&amp;#x5B9A;&amp;#x6700;&amp;#x597D;&amp;#x7684;&amp;#x65F6;&amp;#x673A;&lt;/strong&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h6 id=&quot;autolayout-by-yongsir&quot;&gt;&lt;a href=&quot;#AutoLayout-by-YongSir&amp;#x1F1E8;&amp;#x1F1F3;&amp;#x1F1E8;&amp;#x1F1F3;&quot; class=&quot;headerlink&quot; title=&quot;AutoLayout by 
+    
+    </summary>
+    
     
   </entry>
   
