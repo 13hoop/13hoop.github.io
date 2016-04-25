@@ -113,31 +113,11 @@
   </entry>
   
   <entry>
-    <title>swift2 ＋ iOS8以后的CoreData变动</title>
-    <link href="http://13hoop.github.io/2016/04/06/swift2-%EF%BC%8B-iOS8%E4%BB%A5%E5%90%8E%E7%9A%84CoreData%E5%8F%98%E5%8A%A8/"/>
-    <id>http://13hoop.github.io/2016/04/06/swift2-＋-iOS8以后的CoreData变动/</id>
-    <published>2016-04-06T05:49:05.000Z</published>
-    <updated>2016-04-06T05:57:04.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;trycatch&quot;&gt;&lt;a href=&quot;#try&amp;#x2026;catch&quot; class=&quot;headerlink&quot; title=&quot;try&amp;#x2026;catch&quot;&gt;&lt;/a&gt;try&amp;#x2026;catch&lt;/h3&gt;&lt;p&gt;swift2&amp;#x4EE5;&amp;#x540E;&amp;#x5F15;&amp;#x5165;&amp;#x4E86;&amp;#x6BD4;&amp;#x8F83;&amp;#x5B8C;&amp;#x6574;&amp;#x7684;try&amp;#xFF0D;catch&amp;#x5F02;&amp;#x5E38;&amp;#x7684;&amp;#x6355;&amp;#x83B7;&amp;#x673A;&amp;#x5236;&amp;#xFF0C;&amp;#x6240;&amp;#x4EE5;&amp;#x539F;&amp;#x6765;&amp;#x7684;error&amp;#x6355;&amp;#x83B7;&amp;#x5168;&amp;#x9762;&amp;#x53D8;&amp;#x52A8;&amp;#xFF1A;&lt;/p&gt;
-&lt;figure class=&quot;highlight swift&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// &amp;#x539F;&amp;#x6765;&amp;#x7684;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; coordinator!.addPersistentStoreWithType(&lt;span class=&quot;type&quot;&gt;NSSQLiteStoreType&lt;/span&gt;, configuration: &lt;span class=&quot;literal&quot;&gt;nil&lt;/span&gt;, &lt;span class=&quot;type&quot;&gt;URL&lt;/span&gt;: url, options: &lt;span class=&quot;literal&quot;&gt;nil&lt;/span&gt;, error: &amp;amp;error) == &lt;span class=&quot;literal&quot;&gt;nil&lt;/span&gt; {&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  coordinator = &lt;span class=&quot;literal&quot;&gt;nil&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;// Report any error we got.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; dict = [&lt;span class=&quot;type&quot;&gt;String&lt;/span&gt;: &lt;span class=&quot;type&quot;&gt;AnyObject&lt;/span&gt;]()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  dict[&lt;span class=&quot;type&quot;&gt;NSLocalizedDescriptionKey&lt;/span&gt;] = &lt;span class=&quot;string&quot;&gt;&amp;quot;Failed to initialize the application&amp;apos;s saved data&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  dict[&lt;span class=&quot;type&quot;&gt;NSLocalizedFailureReasonErrorKey&lt;/span&gt;] = failureReason&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  dict[&lt;span class=&quot;type&quot;&gt;NSUnderlyingErrorKey&lt;/span&gt;] = error&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  error = &lt;span class=&quot;type&quot;&gt;NSError&lt;/span&gt;(domain: &lt;span class=&quot;string&quot;&gt;&amp;quot;YOUR_ERROR_DOMAIN&amp;quot;&lt;/span&gt;, code: &lt;span class=&quot;number&quot;&gt;9999&lt;/span&gt;, userInfo: dict)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;// Replace this with code to handle the error appropriately.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;// abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;type&quot;&gt;NSLog&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&amp;quot;Unresolved error \(error), \(error!.userInfo)&amp;quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  abort()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  }&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;trycatch&quot;&gt;&lt;a href=&quot;#try&amp;#x2026;catch&quot; class=&quot;headerlink&quot; title=&quot;try&amp;#x2026;catch&quot;&gt;&lt;/a&gt;try&amp;#x2026;catch&lt;/h3&gt;&lt;p&gt;swift2&amp;#x4EE5;&amp;#x540E;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>swift － tip001</title>
-    <link href="http://13hoop.github.io/2016/03/22/swift-%EF%BC%8D-tip001/"/>
-    <id>http://13hoop.github.io/2016/03/22/swift-－-tip001/</id>
-    <published>2016-03-22T02:11:40.000Z</published>
-    <updated>2016-04-25T01:50:04.000Z</updated>
+    <link href="http://13hoop.github.io/2016/04/13/swift-%EF%BC%8D-tip001/"/>
+    <id>http://13hoop.github.io/2016/04/13/swift-－-tip001/</id>
+    <published>2016-04-13T02:11:40.000Z</published>
+    <updated>2016-04-25T01:53:56.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;swift&amp;#x7684;tip&quot;&gt;&lt;a href=&quot;#swift&amp;#x7684;tip&quot; class=&quot;headerlink&quot; title=&quot;swift&amp;#x7684;tip&quot;&gt;&lt;/a&gt;&lt;code&gt;swift&lt;/code&gt;&amp;#x7684;tip&lt;/h3&gt;&lt;hr&gt;
 &lt;ul&gt;
@@ -192,6 +172,26 @@
     <summary type="html">
     
       &lt;h3 id=&quot;swift&amp;#x7684;tip&quot;&gt;&lt;a href=&quot;#swift&amp;#x7684;tip&quot; class=&quot;headerlink&quot; title=&quot;swift&amp;#x7684;tip&quot;&gt;&lt;/a&gt;&lt;code&gt;swift&lt;/code&gt;&amp;#x7684;tip&lt;/h3&gt;&lt;hr&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>swift2 ＋ iOS8以后的CoreData变动</title>
+    <link href="http://13hoop.github.io/2016/04/06/swift2-%EF%BC%8B-iOS8%E4%BB%A5%E5%90%8E%E7%9A%84CoreData%E5%8F%98%E5%8A%A8/"/>
+    <id>http://13hoop.github.io/2016/04/06/swift2-＋-iOS8以后的CoreData变动/</id>
+    <published>2016-04-06T05:49:05.000Z</published>
+    <updated>2016-04-06T05:57:04.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;trycatch&quot;&gt;&lt;a href=&quot;#try&amp;#x2026;catch&quot; class=&quot;headerlink&quot; title=&quot;try&amp;#x2026;catch&quot;&gt;&lt;/a&gt;try&amp;#x2026;catch&lt;/h3&gt;&lt;p&gt;swift2&amp;#x4EE5;&amp;#x540E;&amp;#x5F15;&amp;#x5165;&amp;#x4E86;&amp;#x6BD4;&amp;#x8F83;&amp;#x5B8C;&amp;#x6574;&amp;#x7684;try&amp;#xFF0D;catch&amp;#x5F02;&amp;#x5E38;&amp;#x7684;&amp;#x6355;&amp;#x83B7;&amp;#x673A;&amp;#x5236;&amp;#xFF0C;&amp;#x6240;&amp;#x4EE5;&amp;#x539F;&amp;#x6765;&amp;#x7684;error&amp;#x6355;&amp;#x83B7;&amp;#x5168;&amp;#x9762;&amp;#x53D8;&amp;#x52A8;&amp;#xFF1A;&lt;/p&gt;
+&lt;figure class=&quot;highlight swift&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// &amp;#x539F;&amp;#x6765;&amp;#x7684;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; coordinator!.addPersistentStoreWithType(&lt;span class=&quot;type&quot;&gt;NSSQLiteStoreType&lt;/span&gt;, configuration: &lt;span class=&quot;literal&quot;&gt;nil&lt;/span&gt;, &lt;span class=&quot;type&quot;&gt;URL&lt;/span&gt;: url, options: &lt;span class=&quot;literal&quot;&gt;nil&lt;/span&gt;, error: &amp;amp;error) == &lt;span class=&quot;literal&quot;&gt;nil&lt;/span&gt; {&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  coordinator = &lt;span class=&quot;literal&quot;&gt;nil&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;// Report any error we got.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; dict = [&lt;span class=&quot;type&quot;&gt;String&lt;/span&gt;: &lt;span class=&quot;type&quot;&gt;AnyObject&lt;/span&gt;]()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  dict[&lt;span class=&quot;type&quot;&gt;NSLocalizedDescriptionKey&lt;/span&gt;] = &lt;span class=&quot;string&quot;&gt;&amp;quot;Failed to initialize the application&amp;apos;s saved data&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  dict[&lt;span class=&quot;type&quot;&gt;NSLocalizedFailureReasonErrorKey&lt;/span&gt;] = failureReason&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  dict[&lt;span class=&quot;type&quot;&gt;NSUnderlyingErrorKey&lt;/span&gt;] = error&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  error = &lt;span class=&quot;type&quot;&gt;NSError&lt;/span&gt;(domain: &lt;span class=&quot;string&quot;&gt;&amp;quot;YOUR_ERROR_DOMAIN&amp;quot;&lt;/span&gt;, code: &lt;span class=&quot;number&quot;&gt;9999&lt;/span&gt;, userInfo: dict)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;// Replace this with code to handle the error appropriately.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;// abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;type&quot;&gt;NSLog&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&amp;quot;Unresolved error \(error), \(error!.userInfo)&amp;quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  abort()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  }&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;trycatch&quot;&gt;&lt;a href=&quot;#try&amp;#x2026;catch&quot; class=&quot;headerlink&quot; title=&quot;try&amp;#x2026;catch&quot;&gt;&lt;/a&gt;try&amp;#x2026;catch&lt;/h3&gt;&lt;p&gt;swift2&amp;#x4EE5;&amp;#x540E;
     
     </summary>
     

@@ -1,0 +1,102 @@
+<html>
+<head>
+	
+	<title>swift － tip001</title>
+	<meta name="keywords" content="My Blog, Spider Bitch!" />
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+    <!--<link rel="stylesheet" href="/css/main.css">-->
+	<link href="/css/main.css?v=2" rel="stylesheet" type="text/css" />
+    <!--<link rel="stylesheet" href="/css/style.css">-->
+    
+
+    <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Atom feed">
+
+    
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2"/>
+    
+
+</head>
+
+<body>
+
+<h3 id="swift&#x7684;tip"><a href="#swift&#x7684;tip" class="headerlink" title="swift&#x7684;tip"></a><code>swift</code>&#x7684;tip</h3><hr>
+<ul>
+<li>lazy&#x7684;&#x4F7F;&#x7528;    </li>
+</ul>
+<p>lazy &#x51E0;&#x7ECF;&#x66F4;&#x6539;&#xFF0C;&#x6700;&#x7EC8;&#x56FA;&#x5B9A;&#x5728;&#x6700;&#x7B80;&#x5355;&#x7684;&#x5F62;&#x5F0F;&#xFF0C;&#x52A0;&#x4E0A;&#x5173;&#x952E;&#x5B57;<code>lazy</code>&#x5C31;&#x884C;&#x4E86;</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//MARK: lazy</span></span><br><span class="line"><span class="built_in">lazy</span> <span class="keyword">var</span> collectionView: <span class="type">UICollectionView</span> = {</span><br><span class="line">	<span class="keyword">var</span> collectionView = <span class="type">UICollectionView</span>(frame: <span class="keyword">self</span>.view.frame, collectionViewLayout: <span class="keyword">self</span>.flowLayout)</span><br><span class="line">	collectionView.translatesAutoresizingMaskIntoConstraints = <span class="literal">false</span></span><br><span class="line">	collectionView.registerClass(<span class="type">YRContentCollectionViewCell</span>.<span class="keyword">self</span>, forCellWithReuseIdentifier: <span class="string">&quot;collection_cell&quot;</span>)</span><br><span class="line">	collectionView.registerClass(<span class="type">UICollectionReusableView</span>.<span class="keyword">self</span>, forSupplementaryViewOfKind: <span class="type">UICollectionElementKindSectionHeader</span>, withReuseIdentifier: <span class="string">&quot;headerView&quot;</span>)</span><br><span class="line">		<span class="keyword">return</span> collectionView</span><br><span class="line">}()</span><br><span class="line"></span><br><span class="line"><span class="built_in">lazy</span> <span class="keyword">var</span> flowLayout:<span class="type">UICollectionViewFlowLayout</span> = {</span><br><span class="line">	<span class="keyword">var</span> collectionViewLayout = <span class="type">UICollectionViewFlowLayout</span>()</span><br><span class="line">	collectionViewLayout.itemSize = <span class="type">CGSizeMake</span>(<span class="number">300</span>, <span class="number">180</span>)</span><br><span class="line">	collectionViewLayout.headerReferenceSize = <span class="type">CGSizeMake</span>(<span class="number">0</span>, <span class="number">20</span>)</span><br><span class="line">	<span class="keyword">return</span> collectionViewLayout</span><br><span class="line">}()</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><code>Access Control</code>&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x6743;&#x9650;<br>  2&#x79CD;&#x7EA7;&#x522B;&#xFF1A;    </p>
+<pre><code>* &#x6A21;&#x5757;&#x533A;&#x5206;&#xFF0C;&#x5982;&#x4E0D;&#x540C;&#x7684;`Framework`&#x4E4B;&#x95F4;&#xFF0C;&#x800C;`App bundle`&#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x6A21;&#x5757;
+</code></pre><ul>
+<li><p>&#x6E90;&#x6587;&#x4EF6;&#x7EA7;&#x522B;&#xFF0C;&#x5C31;&#x662F;&#x5404;&#x4E2A;class&#x7684;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#x7EA7;&#x522B;    </p>
+<p>3&#x79CD;&#x8BBF;&#x95EE;&#x7EA7;&#x522B;&#xFF1A;<code>Public</code>,<code>Internal</code>&#x548C;<code>Private</code></p>
+<ul>
+<li><code>Public</code>: &#x8DE8;&#x6A21;&#x5757;&#x7EA7;&#x522B;&#xFF0C;&#x5982;<code>Framework</code>&#x4E2D;&#x5F00;&#x653E;&#x7684;&#x65B9;&#x6CD5;&#x548C;&#x5C5E;&#x6027;</li>
+<li>&#x9ED8;&#x8BA4;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x662F;<code>Internal</code> &#xFF0D; &#x5373;&#x4E3A;&#x540C;&#x6A21;&#x5757;&#xFF0C;&#x4F8B;&#x5982;iOS&#x5F00;&#x53D1;&#x901A;&#x5E38;&#x5C31;&#x4E00;&#x4E2A;boundle</li>
+<li><code>Private</code>: &#x672C;&#x6E90;&#x6587;&#x4EF6;&#x7EA7;&#x522B;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// &#x4FEE;&#x9970;class &#xFF0D; &#x6A21;&#x5757;&#x7EA7;&#x522B;&#x4FEE;&#x9970;</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SomePublicClass</span> </span>{}</span><br><span class="line"><span class="keyword">internal</span> <span class="class"><span class="keyword">class</span> <span class="title">SomeInternalClass</span> </span>{}</span><br><span class="line"><span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">SomePrivateClass</span> </span>{}&#x201D;</span><br><span class="line"></span><br><span class="line"><span class="comment">// &#x4FEE;&#x9970;&#x65B9;&#x6CD5; &#xFF0D; &#x6E90;&#x6587;&#x4EF6;&#x7EA7;&#x522B;</span></span><br><span class="line"><span class="keyword">var</span> someInternalConstant = <span class="number">0</span>            <span class="comment">// &#x9690;&#x5F0F;&#x8BBF;&#x95EE;&#x7EA7;&#x522B; internal</span></span><br><span class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">func</span> <span class="title">somePrivateFunction</span><span class="params">()</span></span> {}</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>image &#x548C; color &#x662F;&#x53EF;&#x4EE5;&#x76F8;&#x4E92;&#x8F6C;&#x6362;&#x7684;<br>  &#x901A;&#x5E38;&#x5728;&#x8BBE;&#x7F6E;background &#x65F6;&#xFF1A;</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if let patternImage = UIImage(named: &quot;pattern-grey&quot;) {</span><br><span class="line"> view.backgroundColor = UIColor(patternImage: patternImage)</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>swift&#x4E2D;&#x7F51;&#x7EDC;&#x6846;&#x67B6;<code>Alamofir</code>&#x7684;&#x4F7F;&#x7528;<br>  <code>Alamofir</code>&#x7684;&#x57FA;&#x672C;&#x4F7F;&#x7528;&#x53C2;&#x7167;gitHub&#xFF0C;&#x5DF2;&#x7ECF;&#x8BF4;&#x7684;&#x5F88;&#x8BE6;&#x7EC6;&#x4E86;&#xFF0C;&#x8FD9;&#x91CC;&#x501F;&#x52A9;&#x51E0;&#x4E2A;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#xFF0C;&#x63A2;&#x6C42;&#x4E00;&#x79CD;&#x6700;&#x5408;&#x9002;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#xFF0C;&#x5148;&#x662F;&#x7B80;&#x5355;&#x7684;&#x7F57;&#x5217;&#xFF0C;&#x6700;&#x540E;&#x5728;&#x5206;&#x6790;</p>
+<ul>
+<li><p>&#x4E00;&#x79CD;&#x8F83;&#x4E3A;&#x5178;&#x578B;&#x7684;&#x4F7F;&#x7528;&#xFF0C;&#x672C;&#x8EAB;&#x5BF9;&#x6846;&#x67B6;&#x5E76;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x53D8;&#x52A8;&#xFF0C;&#x53EA;&#x662F;&#x5C06;API&#x8BF7;&#x6C42;&#x548C;URl&#x505A;&#x4E86;&#x89C4;&#x8303;&#x7EDF;&#x4E00;&#xFF0C;&#x5C06;&#x6240;&#x6709;&#x76F8;&#x5173;&#x7EDF;&#x4E00;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;&#x679A;&#x4E3E;&#x589E;&#x5F3A;&#x53EF;&#x8BFB;&#x6027;&#xFF0C;eg&#xFF1A;</p>
+<p><img src="/img/swiftTip001_1.png" alt="&#x5178;&#x578B;&#x4F7F;&#x7528;"></p>
+<pre><code class="swift"><span class="class"><span class="keyword">class</span> <span class="title">ServiceApi</span>: <span class="title">NSObject</span> </span>{
+  <span class="comment">// API &#x90E8;&#x5206;,&#x7EDF;&#x4E00;&#x65B9;&#x6CD5;&#x4E00;&#x4E2A;class&#x4E2D;,&#x4F7F;&#x7528;&#x7D2F;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x5B8C;&#x6574;url</span>
+  <span class="keyword">static</span> <span class="keyword">var</span> host:<span class="type">String</span> = <span class="string">&quot;http://www.swiftmi.com&quot;</span>
+
+  <span class="keyword">internal</span> <span class="class"><span class="keyword">class</span> <span class="title">func</span> <span class="title">getTopicUrl</span>(<span class="title">maxId</span>:<span class="title">Int</span>,<span class="title">count</span>:<span class="title">Int</span>) -&gt; <span class="title">String</span> </span>{
+
+      <span class="keyword">return</span> <span class="string">&quot;\(host)/api/topic/list2/\(maxId)/\(count)&quot;</span>
+  }
+}
+
+<span class="class"><span class="keyword">enum</span> <span class="title">Router</span>: <span class="title">URLRequestConvertible</span> </span>{
+
+}
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<!--<a href="http://13hoop.github.io/2016/04/13/swift-－-tip001/#disqus_thread" class="article-comment-link">Comments</a>-->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = '13hoopgithub'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+<div style="display:none">
+<script src="http://s4.cnzz.com/stat.php?id=undefined&web_id=undefined" language="JavaScript"></script>script>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
