@@ -77,42 +77,6 @@
   </entry>
   
   <entry>
-    <title>C++ 001那时候被吓怕了的.md</title>
-    <link href="http://13hoop.github.io/2016/04/15/C-001%E9%82%A3%E6%97%B6%E5%80%99%E8%A2%AB%E5%90%93%E6%80%95%E4%BA%86%E7%9A%84-md/"/>
-    <id>http://13hoop.github.io/2016/04/15/C-001那时候被吓怕了的-md/</id>
-    <published>2016-04-15T15:46:20.000Z</published>
-    <updated>2016-04-18T04:06:11.000Z</updated>
-    
-    <content type="html">&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;formal parameter&lt;/code&gt; &amp;#x2013;&amp;gt; &lt;em&gt;&lt;code&gt;destructor&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;#xFF5C;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;_copy constructor_&lt;/code&gt;&lt;br&gt;  &amp;#xFF5C;&lt;br&gt;&lt;code&gt;actual parameter&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Tempalte&lt;/strong&gt;     &lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&amp;#x503C;&amp;#x4F20;&amp;#x9012;&lt;br&gt;&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;template&lt;/span&gt;&amp;lt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; T&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;T &lt;span class=&quot;title&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(T a, T b)&lt;/span&gt; &lt;/span&gt;{&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; a + b&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;}&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&amp;#x5F15;&amp;#x7528;&amp;#x4F20;&amp;#x9012;&lt;br&gt;&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;template&lt;/span&gt;&amp;lt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; T&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;T &lt;span class=&quot;title&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(T&amp;amp; a, T&amp;amp; b)&lt;/span&gt; &lt;/span&gt;{&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; a + b&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;}&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&amp;#x5E38;&amp;#x5F15;&amp;#x7528; &amp;#xFF0D; const reference&lt;br&gt;&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;template&lt;/span&gt;&amp;lt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; T&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;T &lt;span class=&quot;title&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; T&amp;amp; a, &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; T&amp;amp; b)&lt;/span&gt; &lt;/span&gt;{&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; a + b&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;}&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&amp;#x66F4;&amp;#x52A0;&amp;#x901A;&amp;#x7528;&amp;#x7684;&amp;#x7248;&amp;#x672C;&amp;#xFF0C;&amp;#x6BCF;&amp;#x4E2A;&amp;#x884C;&amp;#x53C2;&amp;#x7684;&amp;#x7C7B;&amp;#x578B;&amp;#x90FD;&amp;#x53EF;&amp;#x4EE5;&amp;#x4E0D;&amp;#x540C;&lt;br&gt;&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;template&lt;/span&gt;&amp;lt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; Ta, &lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; Tb&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;T &lt;span class=&quot;title&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; Ta&amp;amp; a, &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; Tb&amp;amp; b)&lt;/span&gt; &lt;/span&gt;{&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; a + b&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;}&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;value parameter&lt;/strong&gt; and &lt;strong&gt;reference parameter&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;formal parameter&lt;/code&gt; &amp;#x2013;&amp;gt; &lt;em&gt;&lt;code&gt;destructor&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;#xFF5C;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;_copy 
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>swift － tip001</title>
     <link href="http://13hoop.github.io/2016/04/13/swift-%EF%BC%8D-tip001/"/>
     <id>http://13hoop.github.io/2016/04/13/swift-－-tip001/</id>
@@ -172,6 +136,42 @@
     <summary type="html">
     
       &lt;h3 id=&quot;swift&amp;#x7684;tip&quot;&gt;&lt;a href=&quot;#swift&amp;#x7684;tip&quot; class=&quot;headerlink&quot; title=&quot;swift&amp;#x7684;tip&quot;&gt;&lt;/a&gt;&lt;code&gt;swift&lt;/code&gt;&amp;#x7684;tip&lt;/h3&gt;&lt;hr&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>C++ 那时候被吓怕了的</title>
+    <link href="http://13hoop.github.io/2016/04/08/C-001%E9%82%A3%E6%97%B6%E5%80%99%E8%A2%AB%E5%90%93%E6%80%95%E4%BA%86%E7%9A%84-md/"/>
+    <id>http://13hoop.github.io/2016/04/08/C-001那时候被吓怕了的-md/</id>
+    <published>2016-04-08T15:46:20.000Z</published>
+    <updated>2016-04-25T01:57:30.000Z</updated>
+    
+    <content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;formal parameter&lt;/code&gt; &amp;#x2013;&amp;gt; &lt;em&gt;&lt;code&gt;destructor&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;#xFF5C;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;_copy constructor_&lt;/code&gt;&lt;br&gt;  &amp;#xFF5C;&lt;br&gt;&lt;code&gt;actual parameter&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Tempalte&lt;/strong&gt;     &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;#x503C;&amp;#x4F20;&amp;#x9012;&lt;br&gt;&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;template&lt;/span&gt;&amp;lt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; T&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;T &lt;span class=&quot;title&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(T a, T b)&lt;/span&gt; &lt;/span&gt;{&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; a + b&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;}&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&amp;#x5F15;&amp;#x7528;&amp;#x4F20;&amp;#x9012;&lt;br&gt;&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;template&lt;/span&gt;&amp;lt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; T&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;T &lt;span class=&quot;title&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(T&amp;amp; a, T&amp;amp; b)&lt;/span&gt; &lt;/span&gt;{&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; a + b&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;}&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&amp;#x5E38;&amp;#x5F15;&amp;#x7528; &amp;#xFF0D; const reference&lt;br&gt;&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;template&lt;/span&gt;&amp;lt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; T&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;T &lt;span class=&quot;title&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; T&amp;amp; a, &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; T&amp;amp; b)&lt;/span&gt; &lt;/span&gt;{&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; a + b&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;}&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&amp;#x66F4;&amp;#x52A0;&amp;#x901A;&amp;#x7528;&amp;#x7684;&amp;#x7248;&amp;#x672C;&amp;#xFF0C;&amp;#x6BCF;&amp;#x4E2A;&amp;#x884C;&amp;#x53C2;&amp;#x7684;&amp;#x7C7B;&amp;#x578B;&amp;#x90FD;&amp;#x53EF;&amp;#x4EE5;&amp;#x4E0D;&amp;#x540C;&lt;br&gt;&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;template&lt;/span&gt;&amp;lt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; Ta, &lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; Tb&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;T &lt;span class=&quot;title&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; Ta&amp;amp; a, &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; Tb&amp;amp; b)&lt;/span&gt; &lt;/span&gt;{&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; a + b&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;}&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;value parameter&lt;/strong&gt; and &lt;strong&gt;reference parameter&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;formal parameter&lt;/code&gt; &amp;#x2013;&amp;gt; &lt;em&gt;&lt;code&gt;destructor&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;#xFF5C;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;_copy 
     
     </summary>
     
