@@ -63,6 +63,9 @@
 </li>
 <li><p>&#x6700;&#x91CD;&#x8981;&#x7684;layout&#x4E2D;&#x8981;&#x8BBE;&#x7F6E;<code>headerReferenceSize</code>,&#x5426;&#x5219;&#x4EE3;&#x7406;&#x65B9;&#x6CD5;not be called</p>
 </li>
+<li><p><strong>&#x6700;&#x5927;&#x7684;&#x4E00;&#x4E2A;&#x5751;</strong>,&#x518D;&#x7ED9;supplyView&#x6DFB;&#x52A0;subView&#x65F6;&#xFF0C;&#x4F7F;&#x7528;<code>bounds</code>&#x800C;&#x4E0D;&#x80FD;&#x662F;<code>frame</code>,&#x5426;&#x5219;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x6240;&#x8C13;drop&#x7684;&#x73B0;&#x8C61;</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="keyword">init</span>(frame: <span class="type">CGRect</span>) {</span><br><span class="line">	<span class="keyword">super</span>.<span class="keyword">init</span>(frame: frame)</span><br><span class="line">	label.frame = bounds <span class="comment">// &#x800C;&#x4E0D;&#x662F;frame</span></span><br><span class="line">	addSubview(label)</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
 
 
