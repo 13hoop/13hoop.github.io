@@ -1,0 +1,131 @@
+<html>
+<head>
+	
+	<title>hadoop集群搭建tip.md</title>
+	<meta name="keywords" content="My Blog, Spider Bitch!" />
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+    <!--<link rel="stylesheet" href="/css/main.css">-->
+	<link href="/css/main.css?v=2" rel="stylesheet" type="text/css" />
+    <!--<link rel="stylesheet" href="/css/style.css">-->
+    
+
+    <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Atom feed">
+
+    
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2"/>
+    
+
+</head>
+
+<body>
+
+<h2 id="hadoop-yarn-zookeeper-5&#x4E2A;&#x8282;&#x70B9;&#x642D;&#x5EFA;demo"><a href="#hadoop-yarn-zookeeper-5&#x4E2A;&#x8282;&#x70B9;&#x642D;&#x5EFA;Demo" class="headerlink" title="hadoop + yarn + zookeeper: 5&#x4E2A;&#x8282;&#x70B9;&#x642D;&#x5EFA;Demo"></a>hadoop + yarn + zookeeper: 5&#x4E2A;&#x8282;&#x70B9;&#x642D;&#x5EFA;Demo</h2><p>1 &#x89C4;&#x5212;</p>
+<ul>
+<li>&#x7EDF;&#x4E00;useradd&#xFF1A;<code>hadoop</code>,&#x76EE;&#x5F55;<code>~&#xFF0F;app</code> + <code>~/data</code> + <code>~/tools</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&#x7F16;&#x53F7;</th>
+<th style="text-align:right">nameNode</th>
+<th style="text-align:center">dataNode</th>
+<th style="text-align:center">journalnode</th>
+<th style="text-align:center">resoucrcemanager</th>
+<th style="text-align:center">datamanager</th>
+<th style="text-align:center">zookeeper</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>node1</td>
+<td style="text-align:right">&#x221A;</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">&#x221A;</td>
+<td style="text-align:center">&#x221A;</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">&#x221A;</td>
+</tr>
+<tr>
+<td>node2</td>
+<td style="text-align:right">&#x221A;</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">&#x221A;</td>
+<td style="text-align:center">&#x221A;</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">&#x221A;</td>
+</tr>
+<tr>
+<td>node3</td>
+<td style="text-align:right"></td>
+<td style="text-align:center">&#x221A;</td>
+<td style="text-align:center">&#x221A;</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">&#x221A;</td>
+<td style="text-align:center">&#x221A;</td>
+</tr>
+<tr>
+<td>node4</td>
+<td style="text-align:right"></td>
+<td style="text-align:center">&#x221A;</td>
+<td style="text-align:center">&#x221A;</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">&#x221A;</td>
+<td style="text-align:center">&#x221A;</td>
+</tr>
+<tr>
+<td>node5</td>
+<td style="text-align:right"></td>
+<td style="text-align:center">&#x221A;</td>
+<td style="text-align:center">&#x221A;</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">&#x221A;</td>
+<td style="text-align:center">&#x221A;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>hadoop2.6.9 stable</code> + <code>jdk1.7</code> + <code>zookeeper 3.4</code></li>
+<li><code>ntpdate</code>&#x65F6;&#x949F;&#x540C;&#x6B65; + ssh + &#x811A;&#x672C;</li>
+</ul>
+<p>2 &#x5B89;&#x88C5;      </p>
+<ul>
+<li>jdk + &#x73AF;&#x5883;&#x53D8;&#x91CF;  </li>
+<li><p>Zookeeper+ &#x73AF;&#x5883;&#x53D8;&#x91CF;  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">zoo.cfg:</span><br><span class="line">	clientPort = 2181; </span><br><span class="line">	service.1=node1:2888:3888</span><br><span class="line">	service.2=node1:2888:3888</span><br><span class="line">	service.3=node1:2888:3888</span><br><span class="line">	service.4=node1:2888:3888</span><br><span class="line">	service.5=node1:2888:3888</span><br><span class="line">	dataDir=/home/hadoop/data/zookeeper/zkdata</span><br><span class="line">	dataLogDir=/home/hadoop/data/zookeeper/zkdatalog</span><br><span class="line">----</span><br><span class="line">zkdata&#x4E0B;&#xFF1A;</span><br><span class="line">	myid &gt;&gt; &#x5BF9;&#x4E8E;&#x8282;&#x70B9;&#x7F16;&#x53F7; </span><br><span class="line">&#x542F;&#x52A8;&#x6D4B;&#x8BD5;&#xFF1A;</span><br><span class="line">	&#x811A;&#x672C; + ~/app/zookeeper/bin/zkServir.sh start/status + jps</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>hadoop + &#x73AF;&#x5883;&#x53D8;&#x91CF;</p>
+</li>
+</ul>
+
+
+<!--<a href="http://13hoop.github.io/2017/03/16/hadoop集群搭建tip-md/#disqus_thread" class="article-comment-link">Comments</a>-->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = '13hoopgithub'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+<div style="display:none">
+<script src="http://s4.cnzz.com/stat.php?id=undefined&web_id=undefined" language="JavaScript"></script>script>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
