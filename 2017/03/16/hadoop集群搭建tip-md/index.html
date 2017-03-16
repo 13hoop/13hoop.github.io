@@ -25,7 +25,7 @@
 
 <h2 id="hadoop-yarn-zookeeper-5&#x4E2A;&#x8282;&#x70B9;&#x642D;&#x5EFA;demo"><a href="#hadoop-yarn-zookeeper-5&#x4E2A;&#x8282;&#x70B9;&#x642D;&#x5EFA;Demo" class="headerlink" title="hadoop + yarn + zookeeper: 5&#x4E2A;&#x8282;&#x70B9;&#x642D;&#x5EFA;Demo"></a>hadoop + yarn + zookeeper: 5&#x4E2A;&#x8282;&#x70B9;&#x642D;&#x5EFA;Demo</h2><p>1 &#x89C4;&#x5212;</p>
 <ul>
-<li>&#x7EDF;&#x4E00;useradd&#xFF1A;<code>hadoop</code>,&#x76EE;&#x5F55;<code>~&#xFF0F;app</code> + <code>~/data</code> + <code>~/tools</code></li>
+<li>&#x7EDF;&#x4E00;useradd&#xFF1A;<code>hadoop + passwd</code>,&#x76EE;&#x5F55;<code>~&#xFF0F;app</code> + <code>~/data</code> + <code>~/tools</code></li>
 </ul>
 <table>
 <thead>
@@ -95,10 +95,19 @@
 <ul>
 <li>jdk + &#x73AF;&#x5883;&#x53D8;&#x91CF;  </li>
 <li><p>Zookeeper+ &#x73AF;&#x5883;&#x53D8;&#x91CF;  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">zoo.cfg:</span><br><span class="line">	clientPort = 2181; </span><br><span class="line">	service.1=node1:2888:3888</span><br><span class="line">	service.2=node1:2888:3888</span><br><span class="line">	service.3=node1:2888:3888</span><br><span class="line">	service.4=node1:2888:3888</span><br><span class="line">	service.5=node1:2888:3888</span><br><span class="line">	dataDir=/home/hadoop/data/zookeeper/zkdata</span><br><span class="line">	dataLogDir=/home/hadoop/data/zookeeper/zkdatalog</span><br><span class="line">----</span><br><span class="line">zkdata&#x4E0B;&#xFF1A;</span><br><span class="line">	myid &gt;&gt; &#x5BF9;&#x4E8E;&#x8282;&#x70B9;&#x7F16;&#x53F7; </span><br><span class="line">&#x542F;&#x52A8;&#x6D4B;&#x8BD5;&#xFF1A;</span><br><span class="line">	&#x811A;&#x672C; + ~/app/zookeeper/bin/zkServir.sh start/status + jps</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">zoo.cfg:</span><br><span class="line">	clientPort = 2181; </span><br><span class="line">	service.1=node1:2888:3888</span><br><span class="line">	service.2=node1:2888:3888</span><br><span class="line">	service.3=node1:2888:3888</span><br><span class="line">	service.4=node1:2888:3888</span><br><span class="line">	service.5=node1:2888:3888</span><br><span class="line">	dataDir=/home/hadoop/data/zookeeper/zkdata</span><br><span class="line">	dataLogDir=/home/hadoop/data/zookeeper/zkdatalog</span><br><span class="line">----</span><br><span class="line">zkdata&#x4E0B;&#xFF1A;</span><br><span class="line">	myid &gt;&gt; &#x8282;&#x70B9;&#x7F16;&#x53F7; </span><br><span class="line">&#x542F;&#x52A8;&#x6D4B;&#x8BD5;&#xFF1A;</span><br><span class="line">	&#x811A;&#x672C; + ~/app/zookeeper/bin/zkServir.sh start/status + jps</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>hadoop + &#x73AF;&#x5883;&#x53D8;&#x91CF;</p>
+<li><p>hadoop + &#x73AF;&#x5883;&#x53D8;&#x91CF;    </p>
+<pre><code>hadoop-env.sh + core-site.xml + hdfs-site.xml
+</code></pre><p> &#x9996;&#x6B21;&#x987A;&#x5E8F;: zookeeper &gt;&gt; journalnode &gt;&gt; namebode format &gt;&gt; zkfc format &gt;&gt; &#x542F;&#x52A8;namenode + &#x5907;&#x7528;namenode&#x542F;&#x52A8;&#x5E76;&#x540C;&#x6B65;  &gt;&gt; journalnode stop<br> &#x65E0;&#x8BEF;&#x53EF;&#x4F7F;&#x7528;sbin/start-dfs.sh&#x542F;&#x52A8;</p>
 </li>
+<li>YARN&#x914D;&#x7F6E;&#xFF1A; mapred-site.xml + yarn-site.xml(resourcemanager&#x914D;&#x7ED9;node1&#xFF0C;node2&#xFF0C;&#x542F;&#x52A8;&#x70ED;&#x5907;&#xFF0C;mapReduce-shufflehandler)</li>
+</ul>
+<p>3 &#x6D4B;&#x8BD5;</p>
+<ul>
+<li>namenode&#x70ED;&#x5907;&#x6D4B;&#x8BD5;&#xFF1A;&#x67E5;&#x770B;<code>host:8088</code> &gt;&gt; active/standby &gt;&gt; &#x5173;&#x95ED;active &gt;&gt; &#x67E5;&#x770B;standy&#x81EA;&#x52A8;active</li>
+<li>recourcemanager&#x6D4B;&#x8BD5;&#xFF1A;&#x67E5;&#x770B;&#x72B6;&#x6001; rmadmin -getServiceStae node1/2 &gt;&gt; active/standby &gt;&gt; &#x5173;&#x95ED;active &gt;&gt; standy&#x81EA;&#x52A8;&#x6FC0;&#x6D3B;</li>
+<li>&#x5B98;&#x65B9;Demo&#x6D4B;&#x8BD5;</li>
 </ul>
 
 
