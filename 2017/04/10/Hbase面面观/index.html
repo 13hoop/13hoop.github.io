@@ -40,8 +40,61 @@
 <p>&#x5982;&#x679C;&#x662F;&#x5355;&#x7EAF;&#x7684;&#x79BB;&#x7EBF;&#x5B58;&#x50A8;&#x4E5F;&#x5C31;&#x7F62;&#x4E86;&#xFF0C;&#x4F46;&#x73B0;&#x5B9E;&#x5F80;&#x5F80;&#x6709;&#x5B9E;&#x65F6;&#x6027;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x6240;&#x4EE5;&#x624D;&#x6709;&#x4E86;HBase&#x5BF9;HDFS&#x7684;&#x8865;&#x5145;&#xFF0C;HBase&#x53EF;&#x4EE5;&#x652F;&#x6301;&#xFF1A;<code>&#x63D2;&#x5165;&#xFF0F;&#x5220;&#x9664;&#xFF0F;&#x67E5;&#x8BE2;</code>&#x7B49;&#x5355;&#x6761;/&#x90E8;&#x5206;&#x6570;&#x636E;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x4FBF;&#x4E8E;&#x9AD8;&#x6548;&#x8FC7;&#x6EE4;&#x548C;&#x8BFB;&#x5199;&#x6570;&#x636E;</p>
 <p>&#x4E5F;&#x6B63;&#x662F;&#x7531;&#x4E8E;&#x5176;&#x8BBE;&#x8BA1;&#x76EE;&#x7684;&#x9650;&#x5236;&#xFF0C;&#x8BA9;HBase&#x62E5;&#x6709;&#x4E86;&#x4E00;&#x4E9B;&#x8DDF;&#x4F20;&#x7EDF;&#x6570;&#x636E;&#x5E93;&#x5B8C;&#x5168;&#x4E0D;&#x540C;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x5217;&#x5F0F;&#x65E0;&#x6A21;&#x5F0F;&#x7A00;&#x758F;&#x7684;&#x6570;&#x636E;&#x7EC4;&#x7EC7;&#x65B9;&#x5F0F;&#x3002;</p>
 <h3 id="&#x5217;&#x5F0F;-&#x56E0;&#x5439;&#x6B7B;&#x505C;"><a href="#&#x5217;&#x5F0F;&#xFF1F;-&#x1F914;&#x56E0;&#x5439;&#x6B7B;&#x505C;" class="headerlink" title="&#x5217;&#x5F0F;&#xFF1F; &#x1F914;&#x56E0;&#x5439;&#x6B7B;&#x505C;"></a>&#x5217;&#x5F0F;&#xFF1F; &#x1F914;&#x56E0;&#x5439;&#x6B7B;&#x505C;</h3><p> &#x5148;&#x6765;&#x770B;&#x770B;&#x4E00;&#x7EC4;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x5728;&#x4F20;&#x7EDF;RDBMS&#x4E2D;&#x5982;mySQL&#x662F;&#x8FD9;&#x6837;&#x5B58;&#x50A8;&#x7684;&#xFF1A;<br>|  id  |   name   | nickName | password |   time   |<br>| :&#x2013;: | :&#x2014;&#x2014;: | :&#x2014;&#x2014;: | :&#x2014;&#x2014;: |:&#x2014;&#x2014;:  |<br>| 001  | zhangsan |   zzss   |  p11zzz  | 20161212 |<br>| 002  |   lisi   |   lsls   |  333lll  | 20161213 |</p>
-<p>&#x6BCF;&#x4E00;&#x884C;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x6570;&#x636E;&#x5355;&#x5143;&#xFF0C;&#x6BCF;&#x4E00;&#x5217;&#x5BF9;&#x5E94;&#x4E8E;&#x90FD;&#x662F;&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x6570;&#x636E;&#xFF0C;&#x904D;&#x5386;&#x67E5;&#x627E;&#x90FD;&#x662F;&#x6839;&#x636E;&#x7D22;&#x5F15;&#xFF0C;&#x67E5;&#x627E;&#x5230;&#x67D0;&#x4E00;&#x884C;&#xFF0C;&#x7136;&#x540E;&#x66F4;&#x52A0;&#x6761;&#x4EF6;&#x53D6;&#x51FA;&#x5BF9;&#x4E8E;&#x6570;&#x636E;&#xFF0C;&#x652F;&#x6301;jion&#x7B49;&#x64CD;&#x4F5C;&#xFF0C;&#x90A3;&#x4E48;&#x540C;&#x6837;&#x7684;&#x6570;&#x636E;&#x5982;&#x679C;&#x5728;HBase&#x4E2D;&#x5462;&#xFF1F;<br>| RowKey |   CF:Column-Key   | Timestamp| CellValue|<br>| :&#x2013;:   |   :&#x2014;&#x2014;&#x2014;&#x2014;:  | :&#x2014;&#x2014;: | :&#x2014;&#x2014;: |<br>|  001   |     name:real     | 123456789| zhangsan |<br>|  001   |     name:nick     | 123456789|   zzss   |<br>|  002   |     name:real     | 123456789|  lishi   |<br>|  002   |     name:nick     | 123456789|   lsls   |<br>|  001   |     info:pwd      | 123456789| zhangsan |<br>&#x4E0A;&#x8FF0;&#x662F;&#x4E00;&#x4E2A;&#x4E00;&#x79CD;&#x7269;&#x7406;&#x5B58;&#x50A8;&#x7684;&#x5F62;&#x5F0F;&#xFF0C;&#x4E0D;&#x592A;&#x5BB9;&#x6613;&#x770B;&#x660E;&#x767D;&#xFF0C;&#x53E6;&#x4E00;&#x79CD;</p>
-<p>Row-Key    CF:Column-Key    &#x65F6;&#x95F4;&#x6233;    Cell Value<br>1    info:fn    123456789    &#x4E09;<br>1    info:ln    123456789    &#x5F20;<br>2    info:fn    123456789    &#x56DB;<br>2    info:ln    123456789    &#x674E;</p>
+<p>&#x6BCF;&#x4E00;&#x884C;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x6570;&#x636E;&#x5355;&#x5143;&#xFF0C;&#x6BCF;&#x4E00;&#x5217;&#x5BF9;&#x5E94;&#x4E8E;&#x90FD;&#x662F;&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x6570;&#x636E;&#x3002;&#x4F46;&#x662F;&#x5728;&#x6CA1;&#x6709;&#x5EFA;&#x7ACB;&#x7D22;&#x5F15;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8BFB;&#x53D6;&#x6574;&#x884C;&#xFF0C;&#x5728;&#x904D;&#x5386;&#x67E5;&#x627E;&#x6570;&#x636E;&#xFF0C;&#x4F1A;&#x4ED8;&#x51FA;&#x5DE8;&#x5927;IO&#xFF1B;&#x800C;&#x7D22;&#x5F15;&#x548C;&#x89C6;&#x56FE;&#x7684;&#x5EFA;&#x7ACB;&#xFF0C;&#x4ED8;&#x51FA;&#x7684;IO&#x548C;&#x6027;&#x80FD;&#x4E5F;&#x4E0D;&#x5BB9;&#x5FFD;&#x89C6;&#xFF1B;&#x6700;&#x91CD;&#x8981;&#x7684;&#x662F;&#x4E3A;&#x6EE1;&#x8DB3;&#x591A;&#x6837;&#x7684;&#x67E5;&#x8BE2;&#x9700;&#x6C42;&#xFF0C;&#x6570;&#x636E;&#x5E93;&#x8981;&#x4E0D;&#x53EF;&#x907F;&#x514D;&#x7684;&#x5927;&#x91CF;&#x6269;&#x5927;&#x81A8;&#x80C0;&#xFF0C;&#x624D;&#x80FD;&#x6EE1;&#x8DB3;&#x6027;&#x80FD;&#x9700;&#x6C42;&#x3002;&#x800C;&#x8FD9;&#x4E9B;&#x95EE;&#x9898;HBase&#x662F;&#x600E;&#x6837;&#x5904;&#x7406;&#x7684;&#x5462;&#xFF0C;&#x5982;&#x679C;&#x4E0A;&#x8FF0;&#x6570;&#x636E;&#x5728;HBase&#x4E2D;&#x662F;&#x600E;&#x6837;&#x5B58;&#x50A8;&#x7684;&#x5462;&#xFF1F;</p>
+<h3 id="&#x6570;&#x636E;&#x6A21;&#x578B;"><a href="#&#x6570;&#x636E;&#x6A21;&#x578B;" class="headerlink" title="&#x6570;&#x636E;&#x6A21;&#x578B;"></a>&#x6570;&#x636E;&#x6A21;&#x578B;</h3><table style="border: 1px solid #9a9a9a"><br>  <tr><br>    <th>RowKey</th><br>    <th>Value (CF Qualifier Version)</th><br>  </tr><br>  <tr><br>    <td rowspan="2">001</td><br>    <td>name{&#x201C;real&#x201D;: &#x201C;zhangshan&#x201D;, &#x201C;nick&#x201D; : &#x201C;zzss&#x201D; }</td><br>  </tr><br>  <tr><br>    <td>info{&#x201C;pwd&#x201D; : &#x201C;333lll&#x201D;}</td><br>  </tr><br>   <tr><br>    <td rowspan="2">001</td><br>    <td>name{&#x201C;real&#x201D;: &#x201C;lishi&#x201D;, &#x201C;nick&#x201D; : &#x201C;lsls&#x201D; }</td><br>  </tr><br>  <tr><br>    <td>info{&#x201C;pwd&#x201D; : &#x201C;333lll&#x201D;}</td><br>  </tr><br></table>
+
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center">RowKey</th>
+<th style="text-align:center">CF:Column-Key</th>
+<th style="text-align:center">Timestamp</th>
+<th style="text-align:center">CellValue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">001</td>
+<td style="text-align:center">name:real</td>
+<td style="text-align:center">123456789</td>
+<td style="text-align:center">zhangsan</td>
+</tr>
+<tr>
+<td style="text-align:center">001</td>
+<td style="text-align:center">name:nick</td>
+<td style="text-align:center">123456789</td>
+<td style="text-align:center">zzss</td>
+</tr>
+<tr>
+<td style="text-align:center">002</td>
+<td style="text-align:center">name:real</td>
+<td style="text-align:center">123456789</td>
+<td style="text-align:center">lishi</td>
+</tr>
+<tr>
+<td style="text-align:center">002</td>
+<td style="text-align:center">name:nick</td>
+<td style="text-align:center">123456789</td>
+<td style="text-align:center">lsls</td>
+</tr>
+<tr>
+<td style="text-align:center">001</td>
+<td style="text-align:center">info:pwd</td>
+<td style="text-align:center">123456789</td>
+<td style="text-align:center">p11zzz</td>
+</tr>
+<tr>
+<td style="text-align:center">002</td>
+<td style="text-align:center">info:pwd</td>
+<td style="text-align:center">123456789</td>
+<td style="text-align:center">333lll</td>
+</tr>
+</tbody>
+</table>
+<p>&#x4E0A;&#x8FF0;&#x662F;&#x4E00;&#x4E2A;&#x4E00;&#x79CD;&#x7269;&#x7406;&#x5B58;&#x50A8;&#x7684;&#x5F62;&#x5F0F;&#xFF0C;&#x4E0D;&#x592A;&#x5BB9;&#x6613;&#x770B;&#x660E;&#x767D;&#xFF0C;&#x5982;&#x679C;&#x8868;&#x8FF0;&#x4E3A;&#x903B;&#x8F91;&#x5B58;&#x50A8;&#x5F62;&#x5F0F;&#xFF1A;</p>
+<p>&#x4ECE;&#x4E0A;&#x8FF0;&#x7684;&#x7269;&#x7406;&#x548C;&#x903B;&#x8F91;&#x6392;&#x5E03;&#x4E2D;&#xFF0C;&#x80FD;&#x770B;&#x51FA;&#x5728;HBase&#x4E2D;&#xFF1A;<br>&#x53EA;&#x6709;&#x4E00;&#x4E2D;&#x7D22;&#x5F15;&#x6807;&#x8BC6;&#x90A3;&#x5C31;&#x662F;<code>RowKey</code>&#xFF0C;</p>
+<p>&#x4F20;&#x7EDF;&#x884C;&#x6570;&#x636E;&#x5E93;&#x7684;&#x95EE;&#x9898; </p>
 <h3 id="&#x6784;&#x67B6;&#x4E3A;&#x4EC0;&#x4E48;&#x80FD;&#x505A;&#x5230;&#x5B9E;&#x65F6;"><a href="#&#x6784;&#x67B6;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x80FD;&#x505A;&#x5230;&#x5B9E;&#x65F6;&#xFF1F;" class="headerlink" title="&#x6784;&#x67B6;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x80FD;&#x505A;&#x5230;&#x5B9E;&#x65F6;&#xFF1F;"></a>&#x6784;&#x67B6;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x80FD;&#x505A;&#x5230;&#x5B9E;&#x65F6;&#xFF1F;</h3><ul>
 <li>&#x9884;&#x5199;&#x5165;&#x65E5;&#x5FD7;&#xFF1A;<code>WALs</code></li>
 </ul>
