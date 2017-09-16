@@ -1,29 +1,89 @@
+<!DOCTYPE HTML>
 <html>
 <head>
-	
-	<title>ReactiveCocoa初探</title>
-	<meta name="keywords" content="Hi, boring world!" />
+  <meta charset="utf-8">
+  
+  <title>ReactiveCocoa初探 | YongSir | 专业程序员伪装者</title>
 
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="author" content="13hoop">
+  
 
-    
-    <!--<link rel="stylesheet" href="/css/main.css">-->
-	<link href="/css/main.css?v=2" rel="stylesheet" type="text/css" />
-    <!--<link rel="stylesheet" href="/css/style.css">-->
-    
+  
+  <meta name="description" content="&amp;#x4ECE;&amp;#x6784;&amp;#x67B6;&amp;#x8BF4;&amp;#x8D77;&amp;#x968F;&amp;#x7740;&amp;#x9879;&amp;#x76EE;&amp;#x8D8A;&amp;#x6765;&amp;#x8D8A;&amp;#x5927;&amp;#xFF0C;&amp;#x518D;&amp;#x4E00;&amp;#x5F00;&amp;#x59CB;&amp;#x7B8">
+  
 
-    <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Atom feed">
+  
+  
+  <meta name="keywords" content="">
+  
 
-    
-	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2"/>
-    
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
+  <meta property="og:title" content="ReactiveCocoa初探"/>
+
+  <meta property="og:site_name" content="YongSir"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="YongSir" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
 </head>
 
-<body>
 
-<h3 id="&#x4ECE;&#x6784;&#x67B6;&#x8BF4;&#x8D77;"><a href="#&#x4ECE;&#x6784;&#x67B6;&#x8BF4;&#x8D77;" class="headerlink" title="&#x4ECE;&#x6784;&#x67B6;&#x8BF4;&#x8D77;"></a>&#x4ECE;&#x6784;&#x67B6;&#x8BF4;&#x8D77;</h3><p>&#x968F;&#x7740;&#x9879;&#x76EE;&#x8D8A;&#x6765;&#x8D8A;&#x5927;&#xFF0C;&#x518D;&#x4E00;&#x5F00;&#x59CB;&#x7B80;&#x5355;MVC&#x4E0B;&#x7684;&#x7F16;&#x7A0B;&#x548C;&#x7EF4;&#x62A4;&#x4E5F;&#x53D8;&#x5F97;&#x8D8A;&#x6765;&#x8D8A;&#x96BE;&#xFF0C;&#x76F4;&#x5230;&#x73B0;&#x5728;&#x8FD8;&#x5728;&#x8D76;&#x5DE5;&#x52A0;&#x65B0;&#x529F;&#x80FD;&#xFF0C;&#x79C9;&#x627F;&#x7740;1&#x5468;&#x4E00;&#x529F;&#x80FD;2&#x5468;&#x4E00;&#x7248;&#x672C;&#x7684;&#x8282;&#x594F;&#xFF0C;&#x6839;&#x672C;&#x6CA1;&#x6709;&#x591A;&#x5C11;&#x65F6;&#x95F4;&#x6765;&#x7EF4;&#x62A4;&#x548C;&#x91CD;&#x6784;&#x4EE3;&#x7801;&#xFF0C;&#x8FD9;&#x6837;&#x4E0B;&#x53BB;&#x7EC8;&#x7A76;&#x4F1A;&#x5BFC;&#x81F4;&#x9879;&#x76EE;&#x96BE;&#x4EE5;&#x7EF4;&#x62A4;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x6211;&#x53F8;app&#x4E2D;&#x6709;&#x5927;&#x91CF;&#x7684;&#x4E0A;&#x4E00;&#x4E2A;&#x5927;&#x7248;&#x672C;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x867D;&#x7136;&#x8001;&#x4EE3;&#x7801;&#x7684;&#x786E;&#x8BA9;&#x65B0;&#x7248;&#x7684;&#x901F;&#x5EA6;&#x5FEB;&#x4E86;&#x4E0D;&#x5C11;&#xFF0C;&#x4F46;&#x73B0;&#x5728;&#x7EF4;&#x62A4;&#x8D77;&#x6765;&#x90A3;&#x4E2A;&#x9178;&#x723D;&#x554A;</p>
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">YongSir</a>
+    </h1>
+    <p class="site-description">专业程序员伪装者</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>ReactiveCocoa初探</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2016/02/01/ReactiveCocoa初探/" rel="bookmark">
+        <time class="entry-date published" datetime="2016-02-01T09:35:01.000Z">
+          2016-02-01
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h3 id="&#x4ECE;&#x6784;&#x67B6;&#x8BF4;&#x8D77;"><a href="#&#x4ECE;&#x6784;&#x67B6;&#x8BF4;&#x8D77;" class="headerlink" title="&#x4ECE;&#x6784;&#x67B6;&#x8BF4;&#x8D77;"></a>&#x4ECE;&#x6784;&#x67B6;&#x8BF4;&#x8D77;</h3><p>&#x968F;&#x7740;&#x9879;&#x76EE;&#x8D8A;&#x6765;&#x8D8A;&#x5927;&#xFF0C;&#x518D;&#x4E00;&#x5F00;&#x59CB;&#x7B80;&#x5355;MVC&#x4E0B;&#x7684;&#x7F16;&#x7A0B;&#x548C;&#x7EF4;&#x62A4;&#x4E5F;&#x53D8;&#x5F97;&#x8D8A;&#x6765;&#x8D8A;&#x96BE;&#xFF0C;&#x76F4;&#x5230;&#x73B0;&#x5728;&#x8FD8;&#x5728;&#x8D76;&#x5DE5;&#x52A0;&#x65B0;&#x529F;&#x80FD;&#xFF0C;&#x79C9;&#x627F;&#x7740;1&#x5468;&#x4E00;&#x529F;&#x80FD;2&#x5468;&#x4E00;&#x7248;&#x672C;&#x7684;&#x8282;&#x594F;&#xFF0C;&#x6839;&#x672C;&#x6CA1;&#x6709;&#x591A;&#x5C11;&#x65F6;&#x95F4;&#x6765;&#x7EF4;&#x62A4;&#x548C;&#x91CD;&#x6784;&#x4EE3;&#x7801;&#xFF0C;&#x8FD9;&#x6837;&#x4E0B;&#x53BB;&#x7EC8;&#x7A76;&#x4F1A;&#x5BFC;&#x81F4;&#x9879;&#x76EE;&#x96BE;&#x4EE5;&#x7EF4;&#x62A4;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x6211;&#x53F8;app&#x4E2D;&#x6709;&#x5927;&#x91CF;&#x7684;&#x4E0A;&#x4E00;&#x4E2A;&#x5927;&#x7248;&#x672C;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x867D;&#x7136;&#x8001;&#x4EE3;&#x7801;&#x7684;&#x786E;&#x8BA9;&#x65B0;&#x7248;&#x7684;&#x901F;&#x5EA6;&#x5FEB;&#x4E86;&#x4E0D;&#x5C11;&#xFF0C;&#x4F46;&#x73B0;&#x5728;&#x7EF4;&#x62A4;&#x8D77;&#x6765;&#x90A3;&#x4E2A;&#x9178;&#x723D;&#x554A;</p>
 <p>&#x6240;&#x4EE5;&#x8D8A;&#x6765;&#x8D8A;&#x611F;&#x89C9;&#x5230;&#x4E00;&#x4E2A;&#x597D;&#x7684;&#xFF0C;&#x7B80;&#x6D01;&#x7684;&#xFF0C;&#x4F4E;&#x8026;&#x5408;&#x7684;&#x5E76;&#x7ECF;&#x8FC7;&#x68C0;&#x9A8C;&#x7684;&#x6784;&#x67B6;&#x5BF9;&#x9879;&#x76EE;&#x6709;&#x591A;&#x91CD;&#x8981;&#x4E86;&#xFF0C;&#x5982;&#x679C;&#x4E0A;&#x5929;&#x8981;&#x518D;&#x7ED9;&#x6211;&#x4E00;&#x6B21;&#x673A;&#x4F1A;&#x7684;&#x8BDD;&#xFF0C;&#x6211;&#x4E00;&#x5B9A;&#x8981;&#x2026;</p>
 <p>&#x770B;&#x6765;&#x770B;&#x53BB;&#x7785;&#x4E0A;&#x4E86;&#x706B;&#x70ED;&#x7684;MVVM&#xFF0C;&#x4F46;&#x5F88;&#x660E;&#x663E;&#x7684;&#x4E5F;&#x4E2A;&#x5927;&#x95EE;&#x9898;&#x5C31;&#x662F;&#x4E00;&#x65E6;M&#x53D8;&#x5316;&#x4E86;&#xFF0C;&#x5982;&#x4F55;&#x51C6;&#x786E;&#x53CD;&#x6620;&#x5230;UI&#x5C42;&#x9762;&#xFF0C;&#x6BD5;&#x7ADF;&#x4E2D;&#x95F4;&#x591A;&#x4E86;&#x4E00;&#x5C42;ViewModel&#xFF0C;&#x800C;FRP&#x6B63;&#x5F0F;&#x672A;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x800C;&#x4EA7;&#x751F;&#x7684;<br>&#x6240;&#x4EE5;&#x501F;&#x7740;&#x4EE3;&#x7801;&#xFF0C;&#x6765;&#x770B;&#x770B;<code>ReactiveCocoa</code>&#x7684;&#x7B80;&#x5355;&#x4F7F;&#x7528;</p>
 <h3 id="reactivecocoa"><a href="#ReactiveCocoa" class="headerlink" title="ReactiveCocoa"></a>ReactiveCocoa</h3><p>&#x4EC0;&#x4E48;&#x8BDE;&#x751F;&#x80CC;&#x666F;&#xFF0C;&#x597D;&#x5904;&#x5F0A;&#x7AEF;&#x8BC4;&#x4EF7;&#x4E4B;&#x7C7B;&#xFF0C;&#x73B0;&#x5728;&#x8BF4;&#x592A;&#x7A7A;&#x6D1E;&#x4E86;&#xFF0C;&#x6211;&#x5BF9;&#x5B66;&#x4E60;&#x65B0;&#x4E1C;&#x897F;&#x4E00;&#x5411;&#x7684;&#x6001;&#x5EA6;&#x662F;&#x201C;&#x7BA1;&#x4ED6;&#x5A18;&#x7684;&#xFF0C;&#x5148;&#x4E0A;&#x624B;&#x518D;&#x8BF4;&#x201D;&#xFF0C;&#x6240;&#x4EE5;&#x8FD8;&#x662F;&#x6309;&#x7167;&#x672C;&#x4EBA;&#x4E00;&#x8D2F;&#x7B80;&#x5355;&#x7C97;&#x66B4;&#x7684;&#x98CE;&#x683C;&#xFF0C;&#x7ED3;&#x5408;&#x4EE3;&#x7801;&#x548C;Demo&#x6765;&#x8BF4;&#x660E;</p>
@@ -66,31 +126,39 @@
 <p>&#x5C31;&#x5B9E;&#x73B0;&#x4E86;&#x5B8C;&#x6574;&#x529F;&#x80FD;</p>
 <h3 id="&#x603B;&#x7ED3;"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</h3><p>&#x7EFC;&#x5408;&#x6765;&#x770B;&#xFF0C;RAC&#x5F7B;&#x5E95;&#x5C06;&#x4F20;&#x7EDF;&#x7684;&#x6D88;&#x606F;&#x4F20;&#x9012;&#x65B9;&#x5F0F;&#x7EDF;&#x4E00;&#xFF0C;&#x4E0D;&#x7BA1;&#x662F;&#x901A;&#x77E5;&#xFF0C;&#x8FD8;&#x662F;UI&#x4E8B;&#x4EF6;&#xFF0C;&#x90FD;&#x88AB;&#x7EDF;&#x4E00;&#x6210;&#x4E3A;&#x4E86;signal&#xFF0C;&#x5E76;&#x4E14;&#x662F;&#x5B9E;&#x65F6;&#x54CD;&#x5E94;&#x7684;&#xFF0C;&#x8FD9;&#x6837;&#x4F7F;&#x7528;MVVM&#xFF0C;&#x5988;&#x5988;&#x518D;&#x4E5F;&#x4E0D;&#x7528;&#x62C5;&#x5FC3;&#x6570;&#x636E;&#x548C;UI&#x72B6;&#x6001;&#x7684;&#x540C;&#x6B65;&#x4E86;<br>&#x8FD9;&#x91CC;&#x4EC5;&#x4EC5;&#x662F;&#x4E00;&#x4E2A;&#x5C0F;&#x5C0F;&#x7684;Demo&#xFF0C;&#x4F46;&#x662F;&#x8DB3;&#x4EE5;&#x8BF4;&#x670D;&#x53BB;&#x63A5;&#x53D7;RAC&#x4E86;&#xFF0C;&#x4F4F;&#x5927;&#x5BB6;&#x73A9;&#x7684;&#x6109;&#x5FEB; &#x1F604;&#x2026;</p>
 
+      
+    </div>
 
-<!--<a href="http://13hoop.github.io/2016/02/01/ReactiveCocoa初探/#disqus_thread" class="article-comment-link">Comments</a>-->
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = '13hoopgithub'; // required: replace example with your forum shortname
+  </div>
 
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <div class="article-footer">
+    <div class="article-meta pull-left">
 
-<div style="display:none">
-<script src="http://s4.cnzz.com/stat.php?id=undefined&web_id=undefined" language="JavaScript"></script>script>
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2017 13hoop
+    
+  </p>
+</footer>
+    
+  </div>
 </div>
-
-
-
-
-
-
-
 </body>
 </html>

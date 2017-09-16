@@ -1,29 +1,89 @@
+<!DOCTYPE HTML>
 <html>
 <head>
-	
-	<title>js组件化演进探讨-Commom.js/AMD/CMD规范</title>
-	<meta name="keywords" content="Hi, boring world!" />
+  <meta charset="utf-8">
+  
+  <title>js组件化演进探讨-Commom.js/AMD/CMD规范 | YongSir | 专业程序员伪装者</title>
 
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="author" content="13hoop">
+  
 
-    
-    <!--<link rel="stylesheet" href="/css/main.css">-->
-	<link href="/css/main.css?v=2" rel="stylesheet" type="text/css" />
-    <!--<link rel="stylesheet" href="/css/style.css">-->
-    
+  
+  <meta name="description" content="&amp;#x5F15;&amp;#x5B50;&amp;#x5728;&amp;#x65E9;&amp;#x5148;&amp;#x5728;&amp;#x7684;&amp;#x7EC4;&amp;#x4EF6;&amp;#x5316;&amp;#x6F14;&amp;#x5316;&amp;#x4E00;&amp;#x6587;&amp;#x4E2D;&amp;#xFF0C;&amp;#x901A;&amp;#x8FC7;&amp;#x5BF">
+  
 
-    <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Atom feed">
+  
+  
+  <meta name="keywords" content="">
+  
 
-    
-	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2"/>
-    
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
+  <meta property="og:title" content="js组件化演进探讨-Commom.js/AMD/CMD规范"/>
+
+  <meta property="og:site_name" content="YongSir"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="YongSir" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
 </head>
 
-<body>
 
-<h3 id="&#x5F15;&#x5B50;"><a href="#&#x5F15;&#x5B50;" class="headerlink" title="&#x5F15;&#x5B50;"></a>&#x5F15;&#x5B50;</h3><p>&#x5728;&#x65E9;&#x5148;&#x5728;&#x7684;&#x7EC4;&#x4EF6;&#x5316;&#x6F14;&#x5316;&#x4E00;&#x6587;&#x4E2D;&#xFF0C;&#x901A;&#x8FC7;&#x5BF9;&#x7EC4;&#x4EF6;&#x5C01;&#x88C5;&#x7684;&#x4E00;&#x6B65;&#x4E00;&#x6B65;&#x63A8;&#x6F14;&#xFF0C;&#x6700;&#x7EC8;&#x5F97;&#x5230;&#x4E86;&#x4E00;&#x4E2A;&#x96C6;API&#x6743;&#x9650;&#x7BA1;&#x7406;&#xFF0C;&#x8282;&#x7701;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#xFF0C;&#x4EE5;&#x53CA;&#x8C03;&#x7528;&#x65B9;&#x4FBF;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x4F46;&#x4ECD;&#x7136;&#x6CA1;&#x6709;&#x89E3;&#x51B3;&#x6240;&#x6709;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x6BD4;&#x5982;&#x6A21;&#x5757;&#x4F9D;&#x8D56;&#x7BA1;&#x7406;&#xFF0C;&#x800C;&#x8FD9;&#x662F;&#x6A21;&#x5757;&#x5316;&#x6F14;&#x8FDB;&#x5230;&#x53EF;&#x7528;&#x7EA7;&#x522B;&#x7684;&#x5FC5;&#x8981;&#x6761;&#x4EF6;</p>
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">YongSir</a>
+    </h1>
+    <p class="site-description">专业程序员伪装者</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>js组件化演进探讨-Commom.js/AMD/CMD规范</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/04/26/js组件化演进探讨-Commom-js-AMD-CMD规范/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-04-26T09:45:15.000Z">
+          2017-04-26
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h3 id="&#x5F15;&#x5B50;"><a href="#&#x5F15;&#x5B50;" class="headerlink" title="&#x5F15;&#x5B50;"></a>&#x5F15;&#x5B50;</h3><p>&#x5728;&#x65E9;&#x5148;&#x5728;&#x7684;&#x7EC4;&#x4EF6;&#x5316;&#x6F14;&#x5316;&#x4E00;&#x6587;&#x4E2D;&#xFF0C;&#x901A;&#x8FC7;&#x5BF9;&#x7EC4;&#x4EF6;&#x5C01;&#x88C5;&#x7684;&#x4E00;&#x6B65;&#x4E00;&#x6B65;&#x63A8;&#x6F14;&#xFF0C;&#x6700;&#x7EC8;&#x5F97;&#x5230;&#x4E86;&#x4E00;&#x4E2A;&#x96C6;API&#x6743;&#x9650;&#x7BA1;&#x7406;&#xFF0C;&#x8282;&#x7701;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#xFF0C;&#x4EE5;&#x53CA;&#x8C03;&#x7528;&#x65B9;&#x4FBF;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x4F46;&#x4ECD;&#x7136;&#x6CA1;&#x6709;&#x89E3;&#x51B3;&#x6240;&#x6709;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x6BD4;&#x5982;&#x6A21;&#x5757;&#x4F9D;&#x8D56;&#x7BA1;&#x7406;&#xFF0C;&#x800C;&#x8FD9;&#x662F;&#x6A21;&#x5757;&#x5316;&#x6F14;&#x8FDB;&#x5230;&#x53EF;&#x7528;&#x7EA7;&#x522B;&#x7684;&#x5FC5;&#x8981;&#x6761;&#x4EF6;</p>
 <p>&#x5982;&#x679C;&#x4E0D;&#x662F;&#x628A;&#x5DE5;&#x4F5C;&#x91CD;&#x70B9;&#x8F6C;&#x79FB;&#x5230;&#x516C;&#x53F8;&#x524D;&#x7AEF;&#x7684;&#x5DE5;&#x4F5C;&#x4E0A;&#xFF0C;&#x65E0;&#x8BBA;&#x5982;&#x4F55;&#x90FD;&#x4E0D;&#x4F1A;&#x60F3;&#x5230;&#x524D;&#x7AEF;&#x4E3A;&#x4E86;&#x5904;&#x7406;<code>&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x51B2;&#x7A81;+&#x7EC4;&#x4EF6;&#x52A0;&#x8F7D;&#x53CA;&#x4F9D;&#x8D56;&#x7BA1;&#x63A7;+API&#x63A5;&#x53E3;&#x6743;&#x9650;&#x7BA1;&#x7406;</code>&#xFF0C;&#x8FD9;&#x79CD;&#x7EDD;&#x5927;&#x591A;&#x6570;&#x8BED;&#x8A00;&#x51E0;&#x4E4E;&#x5929;&#x7136;&#x62E5;&#x6709;&#x7684;&#x80FD;&#x529B;&#xFF0C;&#x800C;&#x4E3A;&#x6B64;&#x4ED8;&#x51FA;&#x4E86;&#x591A;&#x5C11;&#xFF0C;&#x5728;Java&#x4E00;&#x4E2A;package&#xFF0C;C++&#x4E2D;&#x4E00;&#x4E2A;import module &#x5728;&#x524D;&#x7AEF;&#x7684;&#x5DE5;&#x4F5C;&#x4E2D;&#x786E;&#x5B9E;&#x5728;&#x662F;&#x5927;&#x8D39;&#x5468;&#x6298;&#xFF0C;&#x672C;&#x8D28;&#x539F;&#x56E0;&#x5C31;&#x662F;js&#x539F;&#x672C;&#x662F;&#x88AB;&#x8BBE;&#x8BA1;&#x6210;&#x4E00;&#x95E8;&#x811A;&#x672C;&#x8BED;&#x8A00;&#xFF0C;&#x8BBE;&#x8BA1;&#x8005;&#x4E5F;&#x6CA1;&#x6709;&#x6599;&#x5230;web&#x4F1A;&#x53D1;&#x5C55;&#x6210;&#x4ECA;&#x5929;&#x8FD9;&#x6837;&#x590D;&#x6742;&#x548C;&#x591A;&#x6837;&#xFF0C;&#x800C;&#x53EA;&#x662F;&#x4EE5;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x4F5C;&#x7528;&#x57DF;&#x6807;&#x51C6;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x52A0;&#x5904;&#x7406;&#x9879;&#x76EE;&#x7A0D;&#x5927;&#xFF0C;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x7684;&#x7BA1;&#x7406;&#x548C;&#x7EC4;&#x4EF6;&#x7684;&#x4F9D;&#x8D56;&#x5C31;&#x662F;&#x707E;&#x96BE;&#x7EA7;&#x522B;&#x7684;&#xFF0C;&#x6240;&#x4EE5;modeul&#x5316;&#x662F;&#x5FC5;&#x7136;&#x5E76;&#x8FD8;&#x5C06;&#x7EE7;&#x7EED;&#x53D1;&#x5C55;&#xFF0C;&#x6B63;&#x5982;&#xFF1A;</p>
 <blockquote>
 <p>&#x89C4;&#x8303;&#x5F62;&#x6210;&#x7684;&#x8FC7;&#x7A0B;&#x662F;&#x75DB;&#x82E6;&#x7684;&#xFF0C;&#x524D;&#x7AEF;&#x7684;&#x5148;&#x9A71;&#x5728;&#x5200;&#x8015;&#x706B;&#x79CD;&#x3001;&#x8339;&#x6BDB;&#x996E;&#x8840;&#x7684;&#x9636;&#x6BB5;&#x5F00;&#x59CB;&#xFF0C;&#x53D1;&#x5C55;&#x5230;&#x73B0;&#x5728;&#x521D;&#x5177;&#x89C4;&#x6A21;</p>
@@ -58,31 +118,39 @@
 <h3 id="&#x7EC4;&#x5408;&#x517C;&#x5BB9;&#x5F0F;"><a href="#&#x7EC4;&#x5408;&#x517C;&#x5BB9;&#x5F0F;" class="headerlink" title="&#x7EC4;&#x5408;&#x517C;&#x5BB9;&#x5F0F;"></a>&#x7EC4;&#x5408;&#x517C;&#x5BB9;&#x5F0F;</h3><p>CMD &#x548C; AMD &#x6700;&#x521D;&#x4ECE;&#x5728;&#x5199;&#x6CD5;&#x4E0A;&#x5C31;&#x80FD;&#x533A;&#x5206;&#xFF0C;&#x4F46;&#x662F;&#x73B0;&#x5728;&#x9010;&#x6E10;&#x90FD;&#x517C;&#x5BB9;&#x5BF9;&#x65B9;&#x7684;&#x5199;&#x6CD5;&#xFF0C;&#x867D;&#x7136;&#x5BF9;&#x4E8E;&#x5B66;&#x4E60;&#x6765;&#x8BF4;&#x4E0D;&#x514D;&#x4F1A;&#x5E26;&#x6765;&#x4E00;&#x4E9B;&#x56F0;&#x60D1;&#xFF0C;&#x4F46;&#x5BF9;&#x4E8E;&#x5B9E;&#x9645;&#x9879;&#x76EE;&#x7684;&#x4FBF;&#x5229;&#x6027;&#x786E;&#x662F;&#x5B9E;&#x5B9E;&#x5728;&#x5728;&#x7684;&#xFF0C;&#x5176;&#x5B9E;&#x517C;&#x5BB9;&#x8D77;&#x6765;&#x5F88;&#x5BB9;&#x6613;&#xFF0C;&#x5BF9;&#x4E8E;AMD/CMD&#x68C0;&#x6D4B;<code>define</code>&#xFF0C;&#x5BF9;&#x4E8E;CommonJS&#x68C0;&#x67E5;<code>module.export</code>&#xFF0C;&#x5B9E;&#x73B0;&#x8D77;&#x6765;&#x5927;&#x81F4;&#x5982;&#x4E0B;&#xFF1A;<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">name, definition, context</span>) </span>{</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">module</span> != <span class="string">&apos;undefined&apos;</span> &amp;&amp; <span class="built_in">module</span>.exports) {</span><br><span class="line">        <span class="comment">// &#x5728; CMD &#x89C4;&#x8303;&#x4E0B; (node)</span></span><br><span class="line">        <span class="built_in">module</span>.exports = definition();</span><br><span class="line">    } <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> context[<span class="string">&apos;define&apos;</span>] == <span class="string">&apos;function&apos;</span> &amp;&amp; (context[<span class="string">&apos;define&apos;</span>][<span class="string">&apos;amd&apos;</span>] || context[<span class="string">&apos;define&apos;</span>][<span class="string">&apos;cmd&apos;</span>])  ) {</span><br><span class="line">        <span class="comment">//&#x5728; AMD &#x89C4;&#x8303;&#x4E0B;(RequireJS) &#x6216;&#x8005; CMD &#x89C4;&#x8303;&#x4E0B;(SeaJS)</span></span><br><span class="line">        define(definition);</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        <span class="comment">//&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x73AF;&#x5883;&#x4E0B;</span></span><br><span class="line">        context[name] = definition();</span><br><span class="line">    }</span><br><span class="line">})(<span class="string">&apos;sample&apos;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> sample = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{</span><br><span class="line"><span class="meta">        &quot;use strict&quot;</span>;</span><br><span class="line">        <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">inc</span>(<span class="params"></span>)</span>{</span><br><span class="line">            a++;</span><br><span class="line">        }</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params"></span>)</span>{</span><br><span class="line">            <span class="keyword">return</span> a;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> {</span><br><span class="line">            inc: inc,</span><br><span class="line">            get: get</span><br><span class="line">        }</span><br><span class="line">    })();</span><br><span class="line">    <span class="keyword">return</span> sample;</span><br><span class="line">}, <span class="keyword">this</span>);</span><br></pre></td></tr></table></figure></p>
 <p>&#x8FD9;&#x6837;&#x5C31;&#x5B9E;&#x73B0;&#x4E86;&#x5199;&#x6CD5;&#x517C;&#x5BB9;&#xFF0C;&#x60F3;&#x600E;&#x4E48;&#x5199;&#x90FD;&#x884C;&#x4E86;</p>
 
+      
+    </div>
 
-<!--<a href="http://13hoop.github.io/2017/04/26/js组件化演进探讨-Commom-js-AMD-CMD规范/#disqus_thread" class="article-comment-link">Comments</a>-->
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = '13hoopgithub'; // required: replace example with your forum shortname
+  </div>
 
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <div class="article-footer">
+    <div class="article-meta pull-left">
 
-<div style="display:none">
-<script src="http://s4.cnzz.com/stat.php?id=undefined&web_id=undefined" language="JavaScript"></script>script>
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2017 13hoop
+    
+  </p>
+</footer>
+    
+  </div>
 </div>
-
-
-
-
-
-
-
 </body>
 </html>

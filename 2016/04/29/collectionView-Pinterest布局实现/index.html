@@ -1,59 +1,127 @@
+<!DOCTYPE HTML>
 <html>
 <head>
-	
-	<title>collectionView - Pinterest布局实现</title>
-	<meta name="keywords" content="Hi, boring world!" />
+  <meta charset="utf-8">
+  
+  <title>collectionView - Pinterest布局实现 | YongSir | 专业程序员伪装者</title>
 
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="author" content="13hoop">
+  
 
-    
-    <!--<link rel="stylesheet" href="/css/main.css">-->
-	<link href="/css/main.css?v=2" rel="stylesheet" type="text/css" />
-    <!--<link rel="stylesheet" href="/css/style.css">-->
-    
+  
+  <meta name="description" content="UICollectionView&amp;#x8FC7;&amp;#x4E8E;&amp;#x5F3A;&amp;#x5927;&amp;#x4EE5;&amp;#x81F3;&amp;#x4E8E;&amp;#x5230;&amp;#x73B0;&amp;#x5728;&amp;#x90FD;&amp;#x6CA1;&amp;#x6709;&amp;#x5BF9;&amp;#x5B83;&amp;#x6DF1;&amp;#x516">
+  
 
-    <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Atom feed">
+  
+  
+  <meta name="keywords" content="">
+  
 
-    
-	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2"/>
-    
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
+  <meta property="og:title" content="collectionView - Pinterest布局实现"/>
+
+  <meta property="og:site_name" content="YongSir"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="YongSir" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
 </head>
 
-<body>
 
-<p><code>UICollectionView</code>&#x8FC7;&#x4E8E;&#x5F3A;&#x5927;&#x4EE5;&#x81F3;&#x4E8E;&#x5230;&#x73B0;&#x5728;&#x90FD;&#x6CA1;&#x6709;&#x5BF9;&#x5B83;&#x6DF1;&#x5165;&#x4E86;&#x89E3;&#xFF0C;&#x5176;&#x826F;&#x597D;&#x7684;<code>custemed</code>&#x7279;&#x6027;&#xFF0C;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5B8C;&#x6210;&#x5404;&#x79CD;&#x5404;&#x6837;&#x7684;&#x70AB;&#x9177;&#x6548;&#x679C;&#xFF0C;&#x6BD4;&#x8F83;&#x5178;&#x578B;&#x7684;&#x5982;&#xFF1A;Pinterest&#x7684;&#x6D41;&#x6C34;&#x5E03;&#x5C40;&#xFF0C;&#x8001;&#x7248;paper&#x7684;&#x7FFB;&#x9875;&#x6298;&#x53E0;&#xFF0C;&#x4EE5;&#x53CA;&#x7CFB;&#x7EDF;&#x4EFB;&#x52A1;&#x5207;&#x6362;&#x65F6;&#x7684;&#x6ED1;&#x9875;&#x5F0F;&#x6548;&#x679C;&#x7B49;</p>
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">YongSir</a>
+    </h1>
+    <p class="site-description">专业程序员伪装者</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>collectionView - Pinterest布局实现</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2016/04/29/collectionView-Pinterest布局实现/" rel="bookmark">
+        <time class="entry-date published" datetime="2016-04-29T09:43:10.000Z">
+          2016-04-29
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p><code>UICollectionView</code>&#x8FC7;&#x4E8E;&#x5F3A;&#x5927;&#x4EE5;&#x81F3;&#x4E8E;&#x5230;&#x73B0;&#x5728;&#x90FD;&#x6CA1;&#x6709;&#x5BF9;&#x5B83;&#x6DF1;&#x5165;&#x4E86;&#x89E3;&#xFF0C;&#x5176;&#x826F;&#x597D;&#x7684;<code>custemed</code>&#x7279;&#x6027;&#xFF0C;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5B8C;&#x6210;&#x5404;&#x79CD;&#x5404;&#x6837;&#x7684;&#x70AB;&#x9177;&#x6548;&#x679C;&#xFF0C;&#x6BD4;&#x8F83;&#x5178;&#x578B;&#x7684;&#x5982;&#xFF1A;Pinterest&#x7684;&#x6D41;&#x6C34;&#x5E03;&#x5C40;&#xFF0C;&#x8001;&#x7248;paper&#x7684;&#x7FFB;&#x9875;&#x6298;&#x53E0;&#xFF0C;&#x4EE5;&#x53CA;&#x7CFB;&#x7EDF;&#x4EFB;&#x52A1;&#x5207;&#x6362;&#x65F6;&#x7684;&#x6ED1;&#x9875;&#x5F0F;&#x6548;&#x679C;&#x7B49;</p>
 <p>&#x5F53;&#x7136;&#x6240;&#x6709;&#x7684;custom&#x90FD;&#x662F;&#x9700;&#x8981;&#x501F;&#x52A9;<code>UICollectionViewLayout</code>&#xFF0C;&#x5728;&#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x4E2D;&#xFF0C;&#x9664;&#x975E;&#x5B8C;&#x5168;&#x81EA;&#x5B9A;&#x7684;&#x6548;&#x679C;&#x4E4B;&#x5916;&#xFF0C;&#x7EDD;&#x5927;&#x591A;&#x662F;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x4EE5;&#x5B9A;&#x4E49;&#x4E00;&#x90E8;&#x5206;&#x7684;<code>UICollectionViewFlowLayout</code>&#x5373;&#x53EF;&#xFF0C;&#x90A3;&#x5C31;&#x5FAA;&#x5E8F;&#x6E10;&#x8FDB;&#xFF0C;&#x4ECE;&#x5B83;&#x5165;&#x624B;&#x3002;</p>
 <p>&#x5F53;&#x4F7F;&#x7528;collectionView&#x65F6;&#xFF0C;&#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x5019;&#x5E38;&#x5E38;&#x4E2A;&#x4EBA;&#x6765;&#x8BF4;&#x4F1A;&#x6709;&#x4E00;&#x4E9B;&#x2018;&#x70E6;&#x607C;&#x2019;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x5728;swift&#x4E2D;&#x628A;collectionView&#x5F53;&#x4E2D;&#x5355;&#x72EC;&#x7684;&#x5C5E;&#x6027;&#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x56E0;&#x4E3A;&#x9700;&#x8981;layout&#xFF0C;&#x800C;&#x5F88;&#x591A;&#x65F6;&#x5019;layout&#x662F;&#x9700;&#x8981;&#x5355;&#x72EC;&#x63D0;&#x51FA;&#x6765;&#x8BBE;&#x7F6E;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x603B;&#x4F1A;&#x5E26;&#x6765;&#x4E00;&#x4E9B;&#x70E6;&#x607C;&#xFF0C;&#x4EE3;&#x7801;&#x7684;&#x533A;&#x5206;&#x5E76;&#x4E0D;&#x660E;&#x786E;&#xFF0C;&#x540E;&#x6765;&#x624D;&#x53D1;&#x73B0;&#x7684;&#x786E;&#x662F;&#x81EA;&#x5DF1;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x56E0;&#x4E3A;UICollectionView&#x672C;&#x8EAB;&#x7684;&#x5C5E;&#x6027;&#x662F;&#x6709;&#x53EF;set&#x548C;get&#x7684;collectionViewLayout&#x7684;&#x996E;&#x7528;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x57FA;&#x672C;&#x4E0A;&#x662F;&#x81EA;&#x5DF1;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x8FD9;&#x91CC;&#x987A;&#x4FBF;&#x8BB0;&#x5F55;</p>
 <h4 id="&#x91CD;&#x70B9;&#x65B9;&#x6CD5;"><a href="#&#x91CD;&#x70B9;&#x65B9;&#x6CD5;&#xFF1A;" class="headerlink" title="&#x91CD;&#x70B9;&#x65B9;&#x6CD5;&#xFF1A;"></a>&#x91CD;&#x70B9;&#x65B9;&#x6CD5;&#xFF1A;</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// UICollectionView calls these four methods to determine the layout information.</span></span><br><span class="line"><span class="comment">// Implement -layoutAttributesForElementsInRect: to return layout attributes for for supplementary or decoration views, or to perform layout in an as-needed-on-screen fashion.</span></span><br><span class="line"><span class="comment">// Additionally, all layout subclasses should implement -layoutAttributesForItemAtIndexPath: to return layout attributes instances on demand for specific index paths.</span></span><br><span class="line"><span class="comment">// If the layout supports any supplementary or decoration view types, it should also implement the respective atIndexPath: methods for those types.</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">layoutAttributesForElementsInRect</span><span class="params">(rect: CGRect)</span></span> -&gt; [<span class="type">UICollectionViewLayoutAttributes</span>]? <span class="comment">// return an array layout attributes instances for all the views in the given rect</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">layoutAttributesForItemAtIndexPath</span><span class="params">(indexPath: NSIndexPath)</span></span> -&gt; <span class="type">UICollectionViewLayoutAttributes</span>?</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">layoutAttributesForSupplementaryViewOfKind</span><span class="params">(elementKind: String, atIndexPath indexPath: NSIndexPath)</span></span> -&gt; <span class="type">UICollectionViewLayoutAttributes</span>?</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">layoutAttributesForDecorationViewOfKind</span><span class="params">(elementKind: String, atIndexPath indexPath: NSIndexPath)</span></span> -&gt; <span class="type">UICollectionViewLayoutAttributes</span>?</span><br></pre></td></tr></table></figure>
 <p>&#x6CE8;&#x91CA;&#x90E8;&#x5206;&#x5DF2;&#x7ECF;&#x8BF4;&#x4E86;&#xFF1A;&#x4E0A;&#x8FB9;&#x7684;4&#x4E2A;&#x65B9;&#x6CD5;&#x51B3;&#x5B9A;&#x4E86;&#x6700;&#x7EC8;&#x7684;layout&#x4FE1;&#x606F;</p>
 
+      
+    </div>
 
-<!--<a href="http://13hoop.github.io/2016/04/29/collectionView-Pinterest布局实现/#disqus_thread" class="article-comment-link">Comments</a>-->
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = '13hoopgithub'; // required: replace example with your forum shortname
+  </div>
 
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <div class="article-footer">
+    <div class="article-meta pull-left">
 
-<div style="display:none">
-<script src="http://s4.cnzz.com/stat.php?id=undefined&web_id=undefined" language="JavaScript"></script>script>
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2017 13hoop
+    
+  </p>
+</footer>
+    
+  </div>
 </div>
-
-
-
-
-
-
-
 </body>
 </html>

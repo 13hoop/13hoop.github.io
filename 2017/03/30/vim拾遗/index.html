@@ -1,29 +1,89 @@
+<!DOCTYPE HTML>
 <html>
 <head>
-	
-	<title>vim拾遗之- better motion</title>
-	<meta name="keywords" content="Hi, boring world!" />
+  <meta charset="utf-8">
+  
+  <title>vim拾遗之- better motion | YongSir | 专业程序员伪装者</title>
 
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="author" content="13hoop">
+  
 
-    
-    <!--<link rel="stylesheet" href="/css/main.css">-->
-	<link href="/css/main.css?v=2" rel="stylesheet" type="text/css" />
-    <!--<link rel="stylesheet" href="/css/style.css">-->
-    
+  
+  <meta name="description" content="&amp;#x8D81;&amp;#x7740;&amp;#x540C;&amp;#x4E8B;&amp;#x90A3;&amp;#x513F;&amp;#x501F;&amp;#x6765;&amp;#x300A;Vim&amp;#x4F7F;&amp;#x7528;&amp;#x6280;&amp;#x5DE7;&amp;#x300B;&amp;#x7684;&amp;#x673A;&amp;#x4F1A;&amp;#xFF0C;&amp;#x">
+  
 
-    <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Atom feed">
+  
+  
+  <meta name="keywords" content="">
+  
 
-    
-	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2"/>
-    
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
+  <meta property="og:title" content="vim拾遗之- better motion"/>
+
+  <meta property="og:site_name" content="YongSir"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="YongSir" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
 </head>
 
-<body>
 
-<p>&#x8D81;&#x7740;&#x540C;&#x4E8B;&#x90A3;&#x513F;&#x501F;&#x6765;&#x300A;Vim&#x4F7F;&#x7528;&#x6280;&#x5DE7;&#x300B;&#x7684;&#x673A;&#x4F1A;&#xFF0C;&#x91CD;&#x65B0;&#x68B3;&#x7406;&#x4E00;&#x4E0B;Vim&#x7684;&#x5E38;&#x89C1;&#x4F7F;&#x7528;&#x6280;&#x5DE7;&#xFF0C;&#x8BB0;&#x5F55;&#x4E8E;&#x6B64;<br>&#x867D;&#x8BF4;Vim&#x5E73;&#x65F6;&#x7528;&#x7684;&#x5F88;&#x591A;&#xFF0C;&#x81EA;&#x8BA4;&#x4E3A;&#x8FD8;&#x662F;&#x6BD4;&#x8F83;&#x719F;&#x7EC3;&#x7684;&#xFF0C;&#x4F46;&#x76F4;&#x5230;&#x770B;&#x5230;&#x8FD9;&#x672C;&#x4E66;&#xFF0C;&#x624D;&#x77E5;&#x9053;&#x539F;&#x6765;&#x81EA;&#x5DF1;&#x7528;&#x4E86;&#x5047;&#x7684;Vim&#xFF0C;&#x5F88;&#x591A;&#x6280;&#x5DE7;&#x6027;&#x7684;&#x7EC4;&#x5408;&#x53EF;&#x4EE5;&#x8BA9;&#x4EBA;&#x8033;&#x76EE;&#x4E00;&#x65B0;&#xFF0C;&#x6548;&#x7387;&#x63D0;&#x9AD8;&#x4E0D;&#x6B62;&#x4E00;&#x500D;&#xFF0C;&#x5C24;&#x5176;&#x8BB0;&#x4F4F;&#x4E66;&#x4E2D;&#x6240;&#x8A00;&#xFF1A;</p>
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">YongSir</a>
+    </h1>
+    <p class="site-description">专业程序员伪装者</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>vim拾遗之- better motion</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/03/30/vim拾遗/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-03-30T06:14:23.000Z">
+          2017-03-30
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>&#x8D81;&#x7740;&#x540C;&#x4E8B;&#x90A3;&#x513F;&#x501F;&#x6765;&#x300A;Vim&#x4F7F;&#x7528;&#x6280;&#x5DE7;&#x300B;&#x7684;&#x673A;&#x4F1A;&#xFF0C;&#x91CD;&#x65B0;&#x68B3;&#x7406;&#x4E00;&#x4E0B;Vim&#x7684;&#x5E38;&#x89C1;&#x4F7F;&#x7528;&#x6280;&#x5DE7;&#xFF0C;&#x8BB0;&#x5F55;&#x4E8E;&#x6B64;<br>&#x867D;&#x8BF4;Vim&#x5E73;&#x65F6;&#x7528;&#x7684;&#x5F88;&#x591A;&#xFF0C;&#x81EA;&#x8BA4;&#x4E3A;&#x8FD8;&#x662F;&#x6BD4;&#x8F83;&#x719F;&#x7EC3;&#x7684;&#xFF0C;&#x4F46;&#x76F4;&#x5230;&#x770B;&#x5230;&#x8FD9;&#x672C;&#x4E66;&#xFF0C;&#x624D;&#x77E5;&#x9053;&#x539F;&#x6765;&#x81EA;&#x5DF1;&#x7528;&#x4E86;&#x5047;&#x7684;Vim&#xFF0C;&#x5F88;&#x591A;&#x6280;&#x5DE7;&#x6027;&#x7684;&#x7EC4;&#x5408;&#x53EF;&#x4EE5;&#x8BA9;&#x4EBA;&#x8033;&#x76EE;&#x4E00;&#x65B0;&#xFF0C;&#x6548;&#x7387;&#x63D0;&#x9AD8;&#x4E0D;&#x6B62;&#x4E00;&#x500D;&#xFF0C;&#x5C24;&#x5176;&#x8BB0;&#x4F4F;&#x4E66;&#x4E2D;&#x6240;&#x8A00;&#xFF1A;</p>
 <blockquote>
 <p>&#x5728;Vim&#x4E2D;&#x6240;&#x6709;&#x7684;&#x64CD;&#x4F5C;&#x901A;&#x5E38;&#x90FD;&#x4F1A;&#x6709;&#x66F4;&#x52A0;&#x4FBF;&#x6377;&#x7248;&#x672C;,&#x6BD4;&#x5982;&#x5728;&#x79FB;&#x52A8;&#x5149;&#x6807;&#x65F6;&#xFF0C;&#x4E00;&#x65E6;&#x8FDE;&#x7EED;&#x6309;&#x4E86;2&#x6B21;&#x4EE5;&#x4E0A;&#x7684;<code>h</code>&#xFF0C;&#x90A3;&#x5C31;&#x610F;&#x5473;&#x7740;&#x6D6A;&#x8D39;&#x65F6;&#x95F4;,&#x505C;&#x4E0B;&#x6765;&#x60F3;&#x60F3;&#x80FD;&#x4E0D;&#x80FD;&#x66F4;&#x7B80;&#x5355;</p>
 </blockquote>
@@ -66,31 +126,39 @@
 </ul>
 <p>&#x4E0A;&#x8FB9;&#x7684;&#x64CD;&#x4F5C;&#x90FD;&#x5F88;&#x57FA;&#x672C;&#xFF0C;&#x53EF;&#x4EE5;&#x8BF4;&#x6BCF;&#x4E2A;&#x4EBA;&#x90FD;&#x4F1A;&#xFF0C;&#x4F46;vim&#x4E0D;&#x662F;&#x77E5;&#x8BC6;&#x800C;&#x662F;&#x4E00;&#x79CD;&#x6280;&#x80FD;&#xFF0C;&#x5E38;&#x5E38;&#x7EC3;&#x4E60;&#x624D;&#x80FD;&#x771F;&#x6B63;&#x7684;&#x5B9E;&#x73B0;&#x624B;&#x773C;&#x5E76;&#x4E3E;&#xFF0C;&#x7F16;&#x7801;&#x9F50;&#x98DE;</p>
 
+      
+    </div>
 
-<!--<a href="http://13hoop.github.io/2017/03/30/vim拾遗/#disqus_thread" class="article-comment-link">Comments</a>-->
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = '13hoopgithub'; // required: replace example with your forum shortname
+  </div>
 
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <div class="article-footer">
+    <div class="article-meta pull-left">
 
-<div style="display:none">
-<script src="http://s4.cnzz.com/stat.php?id=undefined&web_id=undefined" language="JavaScript"></script>script>
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2017 13hoop
+    
+  </p>
+</footer>
+    
+  </div>
 </div>
-
-
-
-
-
-
-
 </body>
 </html>

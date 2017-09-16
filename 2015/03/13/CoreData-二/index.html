@@ -1,29 +1,89 @@
+<!DOCTYPE HTML>
 <html>
 <head>
-	
-	<title>CoreData(二) - custom coredata stack programmlly</title>
-	<meta name="keywords" content="Hi, boring world!" />
+  <meta charset="utf-8">
+  
+  <title>CoreData(二) - custom coredata stack programmlly | YongSir | 专业程序员伪装者</title>
 
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="author" content="13hoop">
+  
 
-    
-    <!--<link rel="stylesheet" href="/css/main.css">-->
-	<link href="/css/main.css?v=2" rel="stylesheet" type="text/css" />
-    <!--<link rel="stylesheet" href="/css/style.css">-->
-    
+  
+  <meta name="description" content="CoreData and Swift by YongSir&amp;#x1F1E8;&amp;#x1F1F3;&amp;#x1F1E8;&amp;#x1F1F3;&amp;#x4E0A;&amp;#x4E00;&amp;#x7BC7;&amp;#x4E2D;&amp;#xFF0C;&amp;#x5DF2;&amp;#x7ECF;&amp;#x4F53;&amp;#x9A8C;&amp;#x4E86;CoreD">
+  
 
-    <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Atom feed">
+  
+  
+  <meta name="keywords" content="">
+  
 
-    
-	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2"/>
-    
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
+  <meta property="og:title" content="CoreData(二) - custom coredata stack programmlly"/>
+
+  <meta property="og:site_name" content="YongSir"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="YongSir" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
 </head>
 
-<body>
 
-<h6 id="coredata-and-swift-by-yongsir"><a href="#CoreData-and-Swift-by-YongSir&#x1F1E8;&#x1F1F3;&#x1F1E8;&#x1F1F3;" class="headerlink" title="CoreData and Swift by YongSir&#x1F1E8;&#x1F1F3;&#x1F1E8;&#x1F1F3;"></a>CoreData and Swift by YongSir&#x1F1E8;&#x1F1F3;&#x1F1E8;&#x1F1F3;</h6><p>&#x4E0A;&#x4E00;&#x7BC7;&#x4E2D;&#xFF0C;&#x5DF2;&#x7ECF;&#x4F53;&#x9A8C;&#x4E86;CoreData&#x7684;&#x57FA;&#x672C;&#x4F7F;&#x7528;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;Xcode&#x8BBE;&#x8BA1;&#x6570;&#x636E;&#x6A21;&#x578B;&#xFF0C;&#x53EF;&#x4EE5;&#x5BF9;&#x6570;&#x636E;&#x67E5;&#x8BE2;&#xFF0C;&#x589E;&#x52A0;&#xFF0C;&#x66F4;&#x6539;&#xFF0C;&#x4F46;&#x8FD8;&#x4E0D;&#x77E5;&#x9053;&#x5B83;&#x7684;&#x771F;&#x6B63;&#x5DE5;&#x4F5C;&#x673A;&#x5236;&#xFF0C;&#x800C;&#x8FD9;&#x5C06;&#x662F;&#x8FD9;&#x4E00;&#x7BC7;&#x7684;&#x4E3B;&#x8981;&#x5185;&#x5BB9;</p>
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">YongSir</a>
+    </h1>
+    <p class="site-description">专业程序员伪装者</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>CoreData(二) - custom coredata stack programmlly</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2015/03/13/CoreData-二/" rel="bookmark">
+        <time class="entry-date published" datetime="2015-03-13T09:28:07.000Z">
+          2015-03-13
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h6 id="coredata-and-swift-by-yongsir"><a href="#CoreData-and-Swift-by-YongSir&#x1F1E8;&#x1F1F3;&#x1F1E8;&#x1F1F3;" class="headerlink" title="CoreData and Swift by YongSir&#x1F1E8;&#x1F1F3;&#x1F1E8;&#x1F1F3;"></a>CoreData and Swift by YongSir&#x1F1E8;&#x1F1F3;&#x1F1E8;&#x1F1F3;</h6><p>&#x4E0A;&#x4E00;&#x7BC7;&#x4E2D;&#xFF0C;&#x5DF2;&#x7ECF;&#x4F53;&#x9A8C;&#x4E86;CoreData&#x7684;&#x57FA;&#x672C;&#x4F7F;&#x7528;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;Xcode&#x8BBE;&#x8BA1;&#x6570;&#x636E;&#x6A21;&#x578B;&#xFF0C;&#x53EF;&#x4EE5;&#x5BF9;&#x6570;&#x636E;&#x67E5;&#x8BE2;&#xFF0C;&#x589E;&#x52A0;&#xFF0C;&#x66F4;&#x6539;&#xFF0C;&#x4F46;&#x8FD8;&#x4E0D;&#x77E5;&#x9053;&#x5B83;&#x7684;&#x771F;&#x6B63;&#x5DE5;&#x4F5C;&#x673A;&#x5236;&#xFF0C;&#x800C;&#x8FD9;&#x5C06;&#x662F;&#x8FD9;&#x4E00;&#x7BC7;&#x7684;&#x4E3B;&#x8981;&#x5185;&#x5BB9;</p>
 <p>Core Data Stack&#xFF0C;the stack is made up of four Core Data Classes:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* NSManagedObjectModel - &#x6258;&#x7BA1;&#x5BF9;&#x8C61;&#x6A21;&#x578B;</span><br><span class="line">* NSPersistentStore &#xFF0D; &#x6301;&#x4E45;&#x5316;&#x5B58;&#x50A8;</span><br><span class="line">* NSPersistentStoreCoordinator &#xFF0D; &#x6301;&#x4E45;&#x5316;&#x5B58;&#x50A8;&#x534F;&#x8C03;&#x5668;</span><br><span class="line">* NSManagedObjectContext &#xFF0D; &#x6258;&#x7BA1;&#x5BF9;&#x8C61;&#x4E0A;&#x4E0B;&#x6587;</span><br></pre></td></tr></table></figure></p>
 <p>&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x548C;&#x4E0A;&#x4E0B;&#x6587;NSManagedObjectContext&#x6253;&#x8FC7;&#x4EA4;&#x9053;&#x4E86;&#xFF0C;&#x53EF;&#x60F3;&#x800C;&#x77E5;&#x5176;&#x4ED6;3&#x4E2A;&#x662F;&#x76F8;&#x5BF9;&#x5E95;&#x5C42;&#x7684;&#x4F9D;&#x8D56;&#x5728;&#x652F;&#x63F4;&#x8005;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x6240;&#x4EE5;&#x8FD8;&#x662F;&#x8001;&#x89C4;&#x77E9;&#x501F;&#x52A9;&#x4E00;&#x4E2A;Demo&#x5F00;&#x59CB;&#x5427;&#x3002;</p>
 <p><strong>what we do later</strong></p>
@@ -99,31 +159,39 @@
 </li>
 </ul>
 
+      
+    </div>
 
-<!--<a href="http://13hoop.github.io/2015/03/13/CoreData-二/#disqus_thread" class="article-comment-link">Comments</a>-->
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = '13hoopgithub'; // required: replace example with your forum shortname
+  </div>
 
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <div class="article-footer">
+    <div class="article-meta pull-left">
 
-<div style="display:none">
-<script src="http://s4.cnzz.com/stat.php?id=undefined&web_id=undefined" language="JavaScript"></script>script>
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2017 13hoop
+    
+  </p>
+</footer>
+    
+  </div>
 </div>
-
-
-
-
-
-
-
 </body>
 </html>

@@ -1,29 +1,89 @@
+<!DOCTYPE HTML>
 <html>
 <head>
-	
-	<title>Coredata and protocol oriented programming in Swift</title>
-	<meta name="keywords" content="Hi, boring world!" />
+  <meta charset="utf-8">
+  
+  <title>Coredata and protocol oriented programming in Swift | YongSir | 专业程序员伪装者</title>
 
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="author" content="13hoop">
+  
 
-    
-    <!--<link rel="stylesheet" href="/css/main.css">-->
-	<link href="/css/main.css?v=2" rel="stylesheet" type="text/css" />
-    <!--<link rel="stylesheet" href="/css/style.css">-->
-    
+  
+  <meta name="description" content="&amp;#x9996;&amp;#x5148;&amp;#xFF0C;&amp;#x5148;&amp;#x7ED9;&amp;#x51FA;&amp;#x4E00;&amp;#x4E2A;&amp;#x7A0D;&amp;#x6709;&amp;#x96BE;&amp;#x5EA6;&amp;#x7684;&amp;#x4F8B;&amp;#x5B50;&amp;#xFF0C;&amp;#x5173;&amp;#x4E8E;Core d">
+  
 
-    <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Atom feed">
+  
+  
+  <meta name="keywords" content="">
+  
 
-    
-	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2"/>
-    
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
+  <meta property="og:title" content="Coredata and protocol oriented programming in Swift"/>
+
+  <meta property="og:site_name" content="YongSir"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="YongSir" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
 </head>
 
-<body>
 
-<p>&#x9996;&#x5148;&#xFF0C;&#x5148;&#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x7A0D;&#x6709;&#x96BE;&#x5EA6;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x5173;&#x4E8E;<code>Core data &#xFF0B; protocol</code>&#x7684;&#x5177;&#x4F53;&#x4F7F;&#x7528;&#xFF0C;&#x5982;&#x679C;&#x770B;&#x4E0D;&#x4E0B;&#x53BB;&#xFF0C;&#x5C31;&#x4E0D;&#x7528;&#x6307;&#x671B;&#x80FD;&#x5B66;&#x4F1A;&#x4E86;</p>
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">YongSir</a>
+    </h1>
+    <p class="site-description">专业程序员伪装者</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>Coredata and protocol oriented programming in Swift</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2016/08/19/Coredata-and-protocol-oriented-programming-in-Swift/" rel="bookmark">
+        <time class="entry-date published" datetime="2016-08-19T05:43:32.000Z">
+          2016-08-19
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>&#x9996;&#x5148;&#xFF0C;&#x5148;&#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x7A0D;&#x6709;&#x96BE;&#x5EA6;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x5173;&#x4E8E;<code>Core data &#xFF0B; protocol</code>&#x7684;&#x5177;&#x4F53;&#x4F7F;&#x7528;&#xFF0C;&#x5982;&#x679C;&#x770B;&#x4E0D;&#x4E0B;&#x53BB;&#xFF0C;&#x5C31;&#x4E0D;&#x7528;&#x6307;&#x671B;&#x80FD;&#x5B66;&#x4F1A;&#x4E86;</p>
 <ul>
 <li><p>&#x4F7F;&#x7528;protocol&#x7B80;&#x5316;&#x548C;&#x89C4;&#x8303;NSManagedObject&#x7684;&#x64CD;&#x4F5C;</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -33,31 +93,39 @@
 </ul>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+      
+    </div>
 
-<!--<a href="http://13hoop.github.io/2016/08/19/Coredata-and-protocol-oriented-programming-in-Swift/#disqus_thread" class="article-comment-link">Comments</a>-->
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = '13hoopgithub'; // required: replace example with your forum shortname
+  </div>
 
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <div class="article-footer">
+    <div class="article-meta pull-left">
 
-<div style="display:none">
-<script src="http://s4.cnzz.com/stat.php?id=undefined&web_id=undefined" language="JavaScript"></script>script>
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2017 13hoop
+    
+  </p>
+</footer>
+    
+  </div>
 </div>
-
-
-
-
-
-
-
 </body>
 </html>

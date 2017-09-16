@@ -1,29 +1,91 @@
+<!DOCTYPE HTML>
 <html>
 <head>
-	
-	<title>hadoop集群搭建tip.md</title>
-	<meta name="keywords" content="Hi, boring world!" />
+  <meta charset="utf-8">
+  
+  <title>hadoop集群搭建tip.md | YongSir | 专业程序员伪装者</title>
 
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="author" content="13hoop">
+  
 
-    
-    <!--<link rel="stylesheet" href="/css/main.css">-->
-	<link href="/css/main.css?v=2" rel="stylesheet" type="text/css" />
-    <!--<link rel="stylesheet" href="/css/style.css">-->
-    
+  
+  <meta name="description" content="hadoop + yarn + zookeeper: 5&amp;#x4E2A;&amp;#x8282;&amp;#x70B9;&amp;#x642D;&amp;#x5EFA;Demo1 &amp;#x89C4;&amp;#x5212;
 
-    <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Atom feed">
+&amp;#x7EDF;&amp;#x4E00;useradd&amp;#xFF1A;hadoop + passwd,&amp;#x76EE;&amp;#x">
+  
 
-    
-	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2"/>
-    
+  
+  
+  <meta name="keywords" content="">
+  
 
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="hadoop集群搭建tip.md"/>
+
+  <meta property="og:site_name" content="YongSir"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="YongSir" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
 </head>
 
-<body>
 
-<h2 id="hadoop-yarn-zookeeper-5&#x4E2A;&#x8282;&#x70B9;&#x642D;&#x5EFA;demo"><a href="#hadoop-yarn-zookeeper-5&#x4E2A;&#x8282;&#x70B9;&#x642D;&#x5EFA;Demo" class="headerlink" title="hadoop + yarn + zookeeper: 5&#x4E2A;&#x8282;&#x70B9;&#x642D;&#x5EFA;Demo"></a>hadoop + yarn + zookeeper: 5&#x4E2A;&#x8282;&#x70B9;&#x642D;&#x5EFA;Demo</h2><p>1 &#x89C4;&#x5212;</p>
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">YongSir</a>
+    </h1>
+    <p class="site-description">专业程序员伪装者</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>hadoop集群搭建tip.md</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/03/16/hadoop集群搭建tip-md/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-03-16T02:28:42.000Z">
+          2017-03-16
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="hadoop-yarn-zookeeper-5&#x4E2A;&#x8282;&#x70B9;&#x642D;&#x5EFA;demo"><a href="#hadoop-yarn-zookeeper-5&#x4E2A;&#x8282;&#x70B9;&#x642D;&#x5EFA;Demo" class="headerlink" title="hadoop + yarn + zookeeper: 5&#x4E2A;&#x8282;&#x70B9;&#x642D;&#x5EFA;Demo"></a>hadoop + yarn + zookeeper: 5&#x4E2A;&#x8282;&#x70B9;&#x642D;&#x5EFA;Demo</h2><p>1 &#x89C4;&#x5212;</p>
 <ul>
 <li>&#x7EDF;&#x4E00;useradd&#xFF1A;<code>hadoop + passwd</code>,&#x76EE;&#x5F55;<code>~&#xFF0F;app</code> + <code>~/data</code> + <code>~/tools</code></li>
 </ul>
@@ -110,31 +172,39 @@
 <li>&#x5B98;&#x65B9;Demo&#x6D4B;&#x8BD5;</li>
 </ul>
 
+      
+    </div>
 
-<!--<a href="http://13hoop.github.io/2017/03/16/hadoop集群搭建tip-md/#disqus_thread" class="article-comment-link">Comments</a>-->
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = '13hoopgithub'; // required: replace example with your forum shortname
+  </div>
 
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <div class="article-footer">
+    <div class="article-meta pull-left">
 
-<div style="display:none">
-<script src="http://s4.cnzz.com/stat.php?id=undefined&web_id=undefined" language="JavaScript"></script>script>
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2017 13hoop
+    
+  </p>
+</footer>
+    
+  </div>
 </div>
-
-
-
-
-
-
-
 </body>
 </html>
