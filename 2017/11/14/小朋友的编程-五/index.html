@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>小朋友的编程-五 | YongSir | 专业程序员伪装者</title>
+
+  
+  <meta name="author" content="13hoop">
+  
+
+  
+  <meta name="description" content="&amp;#x8FD9;&amp;#x4E00;&amp;#x7BC7;&amp;#x4ECD;&amp;#x7136;&amp;#x662F;&amp;#x89C6;&amp;#x9891;&amp;#x90E8;&amp;#x5206;&amp;#x7684;&amp;#x8865;&amp;#x5145;&amp;#x8D44;&amp;#x6599;&amp;#xFF0C;&amp;#x4E3B;&amp;#x8981;&amp;#x5C3">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="小朋友的编程-五"/>
+
+  <meta property="og:site_name" content="YongSir"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="YongSir" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">YongSir</a>
+    </h1>
+    <p class="site-description">专业程序员伪装者</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>小朋友的编程-五</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/11/14/小朋友的编程-五/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-11-14T06:58:04.000Z">
+          2017-11-14
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>&#x8FD9;&#x4E00;&#x7BC7;&#x4ECD;&#x7136;&#x662F;&#x89C6;&#x9891;&#x90E8;&#x5206;&#x7684;&#x8865;&#x5145;&#x8D44;&#x6599;&#xFF0C;&#x4E3B;&#x8981;&#x5C31;&#x662F;&#x4ECB;&#x7ECD;javaScript&#x7684;</p>
+<h3 id="&#x5173;&#x4E8E;js&#x4EE3;&#x7801;"><a href="#&#x5173;&#x4E8E;js&#x4EE3;&#x7801;" class="headerlink" title="&#x5173;&#x4E8E;js&#x4EE3;&#x7801;"></a>&#x5173;&#x4E8E;js&#x4EE3;&#x7801;</h3><p>&#x901A;&#x8FC7;&#x524D;&#x8FB9;&#x7684;&#x77E5;&#x8BC6;&#xFF0C;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x5199;&#x5728;&#x7F51;&#x9875;&#x4E2D;<code>script</code>&#x6807;&#x7B7E;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5C31;&#x662F;javaScript&#x4EE3;&#x7801;&#xFF0C;&#x6211;&#x4EEC;&#x4EE5;&#x524D;&#x8FD8;&#x63D0;&#x5230;&#x8FC7;&#xFF0C; javascript &#x662F;&#x4E00;&#x79CD;&#x63A5;&#x8FD1;&#x4EBA;&#x7C7B;&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x7684;&#x9AD8;&#x7EA7;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x3002;&#x6240;&#x4EE5;&#x5728;&#x7F51;&#x9875;&#x4E2D;&#x4E00;&#x4E2A;&#x5FC5;&#x7136;&#x7684;&#x4E8B;&#x5B9E;&#x5C31;&#x662F;&#xFF0C;&#x51E1;&#x662F;&#x770B;&#x5230;<script>便签之间包含的东西，那么它就是js代码，而js代码在现代的网页中是无处不在的，我们随意的找一些现实中的例子，比如baidu，如果我们使用开发者工具打开–还记得怎样操作吗？（想一想快捷键–F12），你就会发现大量的script标签，就像这样：<br><img src="https://wx3.sinaimg.cn/mw1024/006mou3Bgy1flhma9ana2j31hu0y8nb7.jpg" alt="JS代码在网页中无处不在，比如baidu"></p>
+<p>但是我们为什么需要js代码呢？</p>
+<p>因为本身html是死的，它是什么样就在你写完它的那一刻就固定了，比如一个标题元素<code>&lt;title&gt;标题一&lt;/title&gt;</code>一开始就固定了永远是标题一，一个数字为100,那么它就会是一直是100，像这样一经创建再也不改变的现象，通常用<code>静态</code>这个词来概括。但现实中的网页却不是这样，大多数时候网页是可以进行各种各样的交互的。比如在我们上次视频中的那个按钮–也就是<code>&lt;button&gt;</code>，我们点击了它会触发一定的事件，我们视频中就是让它计算最终结果并显示结果，再比如你去优酷看视屏的时候，你要去点击播放按钮才会开始播放，以及在玩游戏时你常常会通过键盘让角色运动，而让它干点儿什么通常就是靠js来帮助实现的。</p>
+<p>换一个更通俗的例子，还记得我们前边的机器人吗，我们通过html这样的元素组成了机器人的头，身体等各个部位，而js就相当于给机器人添加了各种行动和思想，让机器人可以动动胳膊抬抬腿之类的行动，这就是为什么我的网页中需要js。因为它会让原本死的元素由静态变为<code>动态</code>，从而变得可以被人们点击，滚动，缩放（<em>缩放网页，你可以试试按下键盘中的Cril键，同时滚动鼠标中间的滚轮</em>）等等交互行为。</p>
+<p>好了，现在停下来我们总结一下：<br>我们会知道，通常的网页都是可以交互的，有的有可以点击的按钮，有的有可以放大的图片，大部分网页还能随着鼠标的滑动而滚动…等等这些行为，都是依靠js来实现的。</p>
+<p>那么我们就来看看JS的具体内容，他到底有什么魔力呢？我们重新回顾一下上次视屏中的js代码：   </p>
+<p><code>// 表示注释，就是用来说明你在干什么的，使用时系统会忽略掉代//的行，所以这其实是给人看的，计算机是不管的</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span><br><span class="line">  <span class="comment">// 说明: element</span></span><br><span class="line">  <span class="comment">// 上边的右侧代码是元素，它是网页的基本组成部分，这些都是 W3C 规定好了的，所以不是重点，重点是下边的代码</span></span><br><span class="line">  <span class="comment">// 这里用到的数学公式： 速度v * 时间t = 路程s</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">// ------------------</span></span><br><span class="line">  <span class="comment">// 编程就是把复杂的事情，一步一步分解</span></span><br><span class="line">  <span class="comment">// 目标： 创建一个网页，可以输入v和t，点击按钮，计算路程s，并显示结果</span></span><br><span class="line">  <span class="comment">//    1&gt; 创建一个网页，可以有输入v和t的元素 --- 已完成，并且不需要你掌握，知道了就行</span></span><br><span class="line">  <span class="comment">//    2&gt; 要能拿到v和t元素:  分别找到t/v input元素  </span></span><br><span class="line">  <span class="comment">//    3&gt; a 点击按钮（事件）</span></span><br><span class="line">  <span class="comment">//       b 拿到现在的v/t的值</span></span><br><span class="line">  <span class="comment">//       c 计算</span></span><br><span class="line">  <span class="comment">//       d 拿到resultElm </span></span><br><span class="line">  <span class="comment">//       e 修改innerText</span></span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 步骤2&gt; 分别找到t/v input元素, 通过id去找到的 -- 规定好了的方法</span></span><br><span class="line">  <span class="keyword">var</span> speedElm = <span class="built_in">document</span>.getElementById(<span class="string">"speed"</span>)</span><br><span class="line">  <span class="keyword">var</span> timeElm = <span class="built_in">document</span>.getElementById(<span class="string">"time"</span>)</span><br><span class="line">  <span class="keyword">var</span> distanceElm = <span class="built_in">document</span>.getElementById(<span class="string">"distance"</span>)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 步骤3&gt; </span></span><br><span class="line">  <span class="comment">//    a 指定点击事件 -- 也是规定好了的， 通过onClick="anXiale()"</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">anXiale</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">//    b 拿到现在的v/t的值</span></span><br><span class="line">    <span class="keyword">var</span> speedValue = speedElm.value</span><br><span class="line">    <span class="keyword">var</span> timeValue = timeElm.value</span><br><span class="line">    <span class="keyword">var</span> distanceValue = distanceElm.value</span><br><span class="line"></span><br><span class="line">  <span class="comment">//    c 带入公式 s = v * t ????</span></span><br><span class="line">    <span class="keyword">var</span> distance = speedValue * timeValue      </span><br><span class="line"></span><br><span class="line">  <span class="comment">//    d 拿到resultElm </span></span><br><span class="line">    <span class="keyword">var</span> resultElm = <span class="built_in">document</span>.getElementById(<span class="string">"result"</span>)      </span><br><span class="line">  </span><br><span class="line">  <span class="comment">//    e 将结果显示到 resultElm元素 -- 规定好了的</span></span><br><span class="line">    resultElm.innerText =<span class="string">": "</span> + distance</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>首先，你肯定总是见到<code>var</code>这个单词，var是一种简写，他的全称是variable【变量】,再直白一点儿就是可以改变的量，比如在计算一个正方形的面积时，我们带入公式 <code>S(面积) = a(边长) * a(边长)</code>,不同的a就会有不同的S， a和S都是可以改变的，因此它们都是变量，而有的量比如 圆的面积计算中 <code>S = 2 * π * (r * r)</code>，其中的r跟S都是可以改变的是变量，而 2 和 π 都是固定的，所以我们称呼它们是<strong>常量</strong>而不是<strong>变量</strong>，对，就是这么的直白。</p>
+<p>恭喜你，因为变量几乎就是网页可以变化的全部秘密，正是由于js中变量的存在，所以网页才可以动起来，所以变量的作用就像是提线木偶的线，一旦拉扯那些控制线，木偶就会做动作。</p>
+<p><img src="https://wx1.sinaimg.cn/mw690/006mou3Bly1fmrmq9xxorj30tl0xcmz4.jpg" alt=""></p>
+<p>其次，上边代码中还有一些符号，有计算符号 + * 还有 = ，他们的意思就是他们本身的意思，只需要注意的是 =, 在编程中并不叫等号，而是赋值符号，它表示<em>将右侧的数值或者变量 赋值给 右侧的变量</em>，好吧看起来的确有一些相等的意思，暂时这样理解也是没问题的。</p>
+<p>还有，这样的语句 <code>function anXiale() {}</code>, 这个我们称之为函数，它是最小的功能单元，我们来具体看看：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 函数定义: 括号里数，我们叫他参数，没有参数就不写</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> 函数名（参数名1, 参数2...） </span>&#123;</span><br><span class="line">    <span class="comment">// 函数具体怎么作实在这里，我们称之为 函数实现</span></span><br><span class="line">    <span class="keyword">return</span> 返回数值  <span class="comment">// 有的函数有，有的没有</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数调用，就是</span></span><br><span class="line">函数名（参数名<span class="number">1</span>, 参数<span class="number">2.</span>..)</span><br></pre></td></tr></table></figure></p>
+<p>比如,我们刚刚提到的计算正方形的面积，如果写成函数的话并使用一下就是：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 函数定义</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">squareArea</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a * a</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 首先声明面积变量S</span></span><br><span class="line"><span class="keyword">var</span> S</span><br><span class="line"><span class="comment">// 然后调用函数，参数</span></span><br><span class="line">S = squareArea(<span class="number">5</span>)  </span><br><span class="line"><span class="comment">// 输出结果</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"面积是"</span> + S)</span><br></pre></td></tr></table></figure></p>
+<p>运行一下结果就是，点击<a href="http://js.jirengu.com/hosoqekase/2/edit">这里</a>去看代码：<br><img src="https://wx4.sinaimg.cn/mw690/006mou3Bly1fmrnfz8hgoj30ri0dstaf.jpg" alt=""></p>
+<p>所以呢，函数就是一种操作，它会有输入然后执行某种操作，在比如我们使用<code>console.log(&quot;面积是&quot; + S)</code>来输出结果到控制台，其实这也是一个函数，你看不到它的实现是因为 <code>浏览器</code>已经默默的帮你实现了，你直接使用就可以了，还有比如<code>document.getElementById(&quot;speed&quot;)</code>这样的函数调用，其实我说这都是规定好的，就是因为它们跟<code>console()</code>一样，都由浏览器帮我们实现好了，所以浏览器跟系统，其实又点儿想你的爸爸妈妈，他们已经帮你准备好了所有的物质基础，你只需要负责好好学习跟快乐成长就可以了 :)</p>
+<p>好了，读到这里我希望在回过去看看我们上次的视频中的代码，是不是了解更多一些了呢，是不是觉得我说的那句你们基本已经学会了编程了，其实真的不是在骗你们… </p>
+<p>所以，总结一下，<code>网页 = html元素 + js</code>，html是网页这个机器人的组成零件，js是可以让机器人动起来的电能和大脑。</p>
+<p>另外，这里我举了一个计算面积的例子，你能不能参照着，想想如何去完成一个计算器呢？<br>我想最起码我们要有4个函数对应 加减乘除 4个基本操作对吧？还要有数据输入的html元素？对，还有呢…？</p>
+<p>好了，下期视屏中我们一起试试吧</p>
+</script></p>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2017 13hoop
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>
